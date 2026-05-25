@@ -1,6 +1,8 @@
 [
   {
-    "_id": { "$oid": "900000000000000000030001" },
+    "_id": {
+      "$oid": "900000000000000000030001"
+    },
     "key": "memory_people",
     "collection": "memory_people",
     "title": "People",
@@ -12,8 +14,14 @@
       "howItWorks": "Create a person the first time the user mentions a name. Reuse the same record forever after — never create a duplicate. `managerId` and `teamId` describe org structure; `tagIds` (free strings inside the array) are loose labels like \"mentor\" or \"customer\".",
       "manipulation": "Search before creating. If the user says \"Sarah\" and a Sarah already exists, ask which one or update the existing record. Keep `notes` (markdown) as the running scratchpad of context about the person.",
       "outcomes": [
-        { "outcome": "Remember a new colleague", "how": "Create a memory_people row with name, role, teamId." },
-        { "outcome": "Recall everything about someone", "how": "Open the person's show page — backlinks from meetings, decisions, wins, etc. show every interaction." }
+        {
+          "outcome": "Remember a new colleague",
+          "how": "Create a memory_people row with name, role, teamId."
+        },
+        {
+          "outcome": "Recall everything about someone",
+          "how": "Open the person's show page — backlinks from meetings, decisions, wins, etc. show every interaction."
+        }
       ],
       "warnings": [
         "Never create a duplicate person. Always search first.",
@@ -21,39 +29,140 @@
       ]
     },
     "icon": "lucide:user",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "title": "Name", "description": "Display name.", "minLength": 1, "maxLength": 200 },
-        "role": { "type": "string", "title": "Role", "description": "Job title or relationship (e.g. \"Engineering Manager\", \"Mentor\").", "maxLength": 200 },
-        "teamId": { "type": "string", "title": "Team", "description": "Team this person belongs to.", "x-ref": "memory_teams" },
-        "managerId": { "type": "string", "title": "Manager", "description": "This person's manager (another person record).", "x-ref": "memory_people" },
-        "email": { "type": "string", "title": "Email", "format": "email" },
-        "tagIds": { "type": "array", "title": "Tags", "description": "Loose labels — mentor, peer, customer, etc.", "items": { "type": "string" } },
-        "notes": { "type": "string", "title": "Notes", "description": "Running markdown notes about this person.", "x-ui": { "format": "markdown" } }
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "description": "Display name.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "role": {
+          "type": "string",
+          "title": "Role",
+          "description": "Job title or relationship (e.g. \"Engineering Manager\", \"Mentor\").",
+          "maxLength": 200
+        },
+        "teamId": {
+          "type": "string",
+          "title": "Team",
+          "description": "Team this person belongs to.",
+          "x-ref": "memory_teams"
+        },
+        "managerId": {
+          "type": "string",
+          "title": "Manager",
+          "description": "This person's manager (another person record).",
+          "x-ref": "memory_people"
+        },
+        "email": {
+          "type": "string",
+          "title": "Email",
+          "format": "email"
+        },
+        "tagIds": {
+          "type": "array",
+          "title": "Tags",
+          "description": "Loose labels — mentor, peer, customer, etc.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "title": "Notes",
+          "description": "Running markdown notes about this person.",
+          "x-ui": {
+            "format": "markdown"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{name}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{name}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 2,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030002" },
+    "_id": {
+      "$oid": "900000000000000000030002"
+    },
     "key": "memory_teams",
     "collection": "memory_teams",
     "title": "Teams",
@@ -65,40 +174,123 @@
       "howItWorks": "Created on demand when the user mentions a team. Keep names short and stable.",
       "manipulation": "One row per team. Reuse, don't duplicate.",
       "outcomes": [
-        { "outcome": "Add a team", "how": "Create with `name` and optional description." }
+        {
+          "outcome": "Add a team",
+          "how": "Create with `name` and optional description."
+        }
       ],
-      "warnings": ["Don't conflate teams with projects — teams are durable org units, projects are time-boxed work."]
+      "warnings": [
+        "Don't conflate teams with projects — teams are durable org units, projects are time-boxed work."
+      ]
     },
     "icon": "lucide:users",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "title": "Name", "minLength": 1, "maxLength": 200 },
-        "description": { "type": "string", "title": "Description", "x-ui": { "format": "markdown" } },
-        "parentTeamId": { "type": "string", "title": "Parent team", "description": "Containing team (for sub-team hierarchy).", "x-ref": "memory_teams" }
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "parentTeamId": {
+          "type": "string",
+          "title": "Parent team",
+          "description": "Containing team (for sub-team hierarchy).",
+          "x-ref": "memory_teams"
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{name}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{name}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
     "tier": 3,
-    "kind": "data",
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030003" },
+    "_id": {
+      "$oid": "900000000000000000030003"
+    },
     "key": "memory_projects",
     "collection": "memory_projects",
     "title": "Projects",
@@ -110,50 +302,163 @@
       "howItWorks": "Status field tracks lifecycle (planning/active/paused/done/archived). `leadPersonId` is the directly responsible individual; `collaboratorIds` are other contributors.",
       "manipulation": "Create when the user starts a new initiative. Update `status` as it progresses. Don't delete archived projects — set status=archived so the history stays linked.",
       "outcomes": [
-        { "outcome": "Track a new initiative", "how": "Create with name, description, leadPersonId." },
-        { "outcome": "Wrap up", "how": "Set status to done or archived." }
+        {
+          "outcome": "Track a new initiative",
+          "how": "Create with name, description, leadPersonId."
+        },
+        {
+          "outcome": "Wrap up",
+          "how": "Set status to done or archived."
+        }
       ],
-      "warnings": ["Don't archive too aggressively — wins, decisions, and incidents lose their context if the project is gone."]
+      "warnings": [
+        "Don't archive too aggressively — wins, decisions, and incidents lose their context if the project is gone."
+      ]
     },
     "icon": "lucide:folder-kanban",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name", "status"],
+      "required": [
+        "name",
+        "status"
+      ],
       "properties": {
-        "name": { "type": "string", "title": "Name", "minLength": 1, "maxLength": 200 },
-        "description": { "type": "string", "title": "Description", "x-ui": { "format": "markdown" } },
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
         "status": {
-          "type": "string", "title": "Status",
-          "enum": ["planning", "active", "paused", "done", "archived"],
+          "type": "string",
+          "title": "Status",
+          "enum": [
+            "planning",
+            "active",
+            "paused",
+            "done",
+            "archived"
+          ],
           "default": "active"
         },
-        "teamId": { "type": "string", "title": "Team", "x-ref": "memory_teams" },
-        "leadPersonId": { "type": "string", "title": "Lead", "description": "Directly responsible person.", "x-ref": "memory_people" },
-        "collaboratorIds": { "type": "array", "title": "Collaborators", "items": { "type": "string", "x-ref": "memory_people" } },
-        "startedAt": { "type": "string", "title": "Started", "format": "date" },
-        "endedAt": { "type": "string", "title": "Ended", "format": "date" }
+        "teamId": {
+          "type": "string",
+          "title": "Team",
+          "x-ref": "memory_teams"
+        },
+        "leadPersonId": {
+          "type": "string",
+          "title": "Lead",
+          "description": "Directly responsible person.",
+          "x-ref": "memory_people"
+        },
+        "collaboratorIds": {
+          "type": "array",
+          "title": "Collaborators",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "startedAt": {
+          "type": "string",
+          "title": "Started",
+          "format": "date"
+        },
+        "endedAt": {
+          "type": "string",
+          "title": "Ended",
+          "format": "date"
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{name}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{name}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 2,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030004" },
+    "_id": {
+      "$oid": "900000000000000000030004"
+    },
     "key": "memory_meetings",
     "collection": "memory_meetings",
     "title": "Meetings",
@@ -165,48 +470,157 @@
       "howItWorks": "Type field distinguishes meeting kinds (1:1, standup, planning, customer, review, other). Every meeting should reference the people who attended; if it was about a project, link the project too. Action items spawned in a meeting live in memory_action_items with `meetingId` pointing back here.",
       "manipulation": "Create after the meeting happens. If the user dictates notes mid-meeting, append to `notes` as markdown. Spawn memory_action_items records for any TODOs that come out.",
       "outcomes": [
-        { "outcome": "Log a 1:1", "how": "Create with type=1:1, peopleIds=[the other person], notes=summary." },
-        { "outcome": "Find what we discussed", "how": "Search by project or person — backlinks surface every meeting." }
+        {
+          "outcome": "Log a 1:1",
+          "how": "Create with type=1:1, peopleIds=[the other person], notes=summary."
+        },
+        {
+          "outcome": "Find what we discussed",
+          "how": "Search by project or person — backlinks surface every meeting."
+        }
       ],
-      "warnings": ["Don't dump raw transcripts here; summarize. Raw audio belongs in voice_notes."]
+      "warnings": [
+        "Don't dump raw transcripts here; summarize. Raw audio belongs in voice_notes."
+      ]
     },
     "icon": "lucide:calendar",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "type"],
+      "required": [
+        "title",
+        "type"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
         "type": {
-          "type": "string", "title": "Type",
-          "enum": ["1:1", "standup", "planning", "review", "customer", "interview", "other"],
+          "type": "string",
+          "title": "Type",
+          "enum": [
+            "1:1",
+            "standup",
+            "planning",
+            "review",
+            "customer",
+            "interview",
+            "other"
+          ],
           "default": "other"
         },
-        "occurredAt": { "type": "string", "title": "When", "format": "date-time" },
-        "peopleIds": { "type": "array", "title": "Attendees", "items": { "type": "string", "x-ref": "memory_people" } },
-        "projectIds": { "type": "array", "title": "Projects discussed", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "notes": { "type": "string", "title": "Notes", "x-ui": { "format": "markdown" } }
+        "occurredAt": {
+          "type": "string",
+          "title": "When",
+          "format": "date-time"
+        },
+        "peopleIds": {
+          "type": "array",
+          "title": "Attendees",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects discussed",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "notes": {
+          "type": "string",
+          "title": "Notes",
+          "x-ui": {
+            "format": "markdown"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "transaction",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030005" },
+    "_id": {
+      "$oid": "900000000000000000030005"
+    },
     "key": "memory_decisions",
     "collection": "memory_decisions",
     "title": "Decisions",
@@ -218,52 +632,181 @@
       "howItWorks": "Title is the decision in active voice (\"Use Redis for session cache\"). `context` describes the problem; `decision` is the actual choice; `rationale` explains why; `consequences` lists tradeoffs. `supersedesId` chains revisions — a new decision can mark an old one as superseded.",
       "manipulation": "Create when the user explicitly decides something. Update `status` (proposed/accepted/superseded/deprecated) as the decision matures. Don't delete superseded decisions — that's the history.",
       "outcomes": [
-        { "outcome": "Record an ADR", "how": "Create with title, context, decision, rationale, consequences, projectIds." },
-        { "outcome": "Reverse a decision", "how": "Create a new decision with supersedesId pointing at the old one, set old one's status to superseded." }
+        {
+          "outcome": "Record an ADR",
+          "how": "Create with title, context, decision, rationale, consequences, projectIds."
+        },
+        {
+          "outcome": "Reverse a decision",
+          "how": "Create a new decision with supersedesId pointing at the old one, set old one's status to superseded."
+        }
       ],
-      "warnings": ["Don't edit accepted decisions in place — create a superseding decision instead. The audit trail is the value."]
+      "warnings": [
+        "Don't edit accepted decisions in place — create a superseding decision instead. The audit trail is the value."
+      ]
     },
     "icon": "lucide:gavel",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "status"],
+      "required": [
+        "title",
+        "status"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
         "status": {
-          "type": "string", "title": "Status",
-          "enum": ["proposed", "accepted", "superseded", "deprecated"],
+          "type": "string",
+          "title": "Status",
+          "enum": [
+            "proposed",
+            "accepted",
+            "superseded",
+            "deprecated"
+          ],
           "default": "accepted"
         },
-        "decidedAt": { "type": "string", "title": "Decided", "format": "date" },
-        "context": { "type": "string", "title": "Context", "x-ui": { "format": "markdown" } },
-        "decision": { "type": "string", "title": "Decision", "x-ui": { "format": "markdown" } },
-        "rationale": { "type": "string", "title": "Rationale", "x-ui": { "format": "markdown" } },
-        "consequences": { "type": "string", "title": "Consequences", "x-ui": { "format": "markdown" } },
-        "projectIds": { "type": "array", "title": "Projects", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "peopleIds": { "type": "array", "title": "Deciders", "items": { "type": "string", "x-ref": "memory_people" } },
-        "supersedesId": { "type": "string", "title": "Supersedes", "description": "Earlier decision this one replaces.", "x-ref": "memory_decisions" }
+        "decidedAt": {
+          "type": "string",
+          "title": "Decided",
+          "format": "date"
+        },
+        "context": {
+          "type": "string",
+          "title": "Context",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "decision": {
+          "type": "string",
+          "title": "Decision",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "title": "Rationale",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "consequences": {
+          "type": "string",
+          "title": "Consequences",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "peopleIds": {
+          "type": "array",
+          "title": "Deciders",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "supersedesId": {
+          "type": "string",
+          "title": "Supersedes",
+          "description": "Earlier decision this one replaces.",
+          "x-ref": "memory_decisions"
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "transaction",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030006" },
+    "_id": {
+      "$oid": "900000000000000000030006"
+    },
     "key": "memory_incidents",
     "collection": "memory_incidents",
     "title": "Incidents",
@@ -275,53 +818,189 @@
       "howItWorks": "`severity` (sev1-4), `status` (active/mitigated/resolved/postmortem), `rootCause` (markdown), `remediation` (markdown). `peopleIds` are responders. Resolves become evidence for incident-response competencies.",
       "manipulation": "Create as soon as detected. Update status live. When postmortem is written, status=postmortem and `rootCause` + `remediation` populated.",
       "outcomes": [
-        { "outcome": "File a sev2", "how": "Create with severity=2, status=active, projectIds, peopleIds." },
-        { "outcome": "Capture postmortem", "how": "Update with rootCause and remediation, status=postmortem." }
+        {
+          "outcome": "File a sev2",
+          "how": "Create with severity=2, status=active, projectIds, peopleIds."
+        },
+        {
+          "outcome": "Capture postmortem",
+          "how": "Update with rootCause and remediation, status=postmortem."
+        }
       ],
-      "warnings": ["Don't blame individuals in description — focus on systemic causes. Incidents are evidence, not punishment."]
+      "warnings": [
+        "Don't blame individuals in description — focus on systemic causes. Incidents are evidence, not punishment."
+      ]
     },
     "icon": "lucide:siren",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "severity", "status"],
+      "required": [
+        "title",
+        "severity",
+        "status"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
-        "severity": { "type": "integer", "title": "Severity", "description": "1 = critical, 4 = minor.", "minimum": 1, "maximum": 4 },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "severity": {
+          "type": "integer",
+          "title": "Severity",
+          "description": "1 = critical, 4 = minor.",
+          "minimum": 1,
+          "maximum": 4
+        },
         "status": {
-          "type": "string", "title": "Status",
-          "enum": ["active", "mitigated", "resolved", "postmortem"],
+          "type": "string",
+          "title": "Status",
+          "enum": [
+            "active",
+            "mitigated",
+            "resolved",
+            "postmortem"
+          ],
           "default": "active"
         },
-        "occurredAt": { "type": "string", "title": "Occurred", "format": "date-time" },
-        "resolvedAt": { "type": "string", "title": "Resolved", "format": "date-time" },
-        "summary": { "type": "string", "title": "Summary", "x-ui": { "format": "markdown" } },
-        "rootCause": { "type": "string", "title": "Root cause", "x-ui": { "format": "markdown" } },
-        "remediation": { "type": "string", "title": "Remediation", "x-ui": { "format": "markdown" } },
-        "projectIds": { "type": "array", "title": "Projects", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "peopleIds": { "type": "array", "title": "Responders", "items": { "type": "string", "x-ref": "memory_people" } },
-        "competencyIds": { "type": "array", "title": "Competencies demonstrated", "items": { "type": "string", "x-ref": "memory_competencies" } }
+        "occurredAt": {
+          "type": "string",
+          "title": "Occurred",
+          "format": "date-time"
+        },
+        "resolvedAt": {
+          "type": "string",
+          "title": "Resolved",
+          "format": "date-time"
+        },
+        "summary": {
+          "type": "string",
+          "title": "Summary",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "rootCause": {
+          "type": "string",
+          "title": "Root cause",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "remediation": {
+          "type": "string",
+          "title": "Remediation",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "peopleIds": {
+          "type": "array",
+          "title": "Responders",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Competencies demonstrated",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "transaction",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030007" },
+    "_id": {
+      "$oid": "900000000000000000030007"
+    },
     "key": "memory_action_items",
     "collection": "memory_action_items",
     "title": "Action Items",
@@ -333,48 +1012,150 @@
       "howItWorks": "`ownerId` is the directly responsible person; `meetingId` links back to the meeting that spawned it; `projectId` links to the project it advances. Status flows todo → in_progress → done (or cancelled).",
       "manipulation": "Create with owner and a clear, verb-first title (\"Email Sarah the spec\"). Mark done as soon as complete.",
       "outcomes": [
-        { "outcome": "Add a TODO from a meeting", "how": "Create with ownerId, meetingId, title, dueAt." }
+        {
+          "outcome": "Add a TODO from a meeting",
+          "how": "Create with ownerId, meetingId, title, dueAt."
+        }
       ],
-      "warnings": ["One owner per action item. If it needs two people, split into two items."]
+      "warnings": [
+        "One owner per action item. If it needs two people, split into two items."
+      ]
     },
     "icon": "lucide:check-square",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "ownerId", "status"],
+      "required": [
+        "title",
+        "ownerId",
+        "status"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
         "status": {
-          "type": "string", "title": "Status",
-          "enum": ["todo", "in_progress", "done", "cancelled"],
+          "type": "string",
+          "title": "Status",
+          "enum": [
+            "todo",
+            "in_progress",
+            "done",
+            "cancelled"
+          ],
           "default": "todo"
         },
-        "ownerId": { "type": "string", "title": "Owner", "x-ref": "memory_people" },
-        "dueAt": { "type": "string", "title": "Due", "format": "date" },
-        "meetingId": { "type": "string", "title": "From meeting", "x-ref": "memory_meetings" },
-        "projectId": { "type": "string", "title": "Project", "x-ref": "memory_projects" },
-        "notes": { "type": "string", "title": "Notes", "x-ui": { "format": "markdown" } }
+        "ownerId": {
+          "type": "string",
+          "title": "Owner",
+          "x-ref": "memory_people"
+        },
+        "dueAt": {
+          "type": "string",
+          "title": "Due",
+          "format": "date"
+        },
+        "meetingId": {
+          "type": "string",
+          "title": "From meeting",
+          "x-ref": "memory_meetings"
+        },
+        "projectId": {
+          "type": "string",
+          "title": "Project",
+          "x-ref": "memory_projects"
+        },
+        "notes": {
+          "type": "string",
+          "title": "Notes",
+          "x-ui": {
+            "format": "markdown"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "transaction",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030008" },
+    "_id": {
+      "$oid": "900000000000000000030008"
+    },
     "key": "memory_wins",
     "collection": "memory_wins",
     "title": "Wins",
@@ -386,46 +1167,166 @@
       "howItWorks": "Short `title` (\"Shipped sub-100ms checkout\"), markdown `description` with the story, `impact` (markdown) with measurable outcomes. Link `competencyIds` so the win attaches to the competencies it demonstrates; link `evidenceIds` for hard artifacts (PRs, dashboards). `peopleIds` for collaborators.",
       "manipulation": "Create the moment something noteworthy happens — don't wait for review prep. Be specific: numbers, names, dates.",
       "outcomes": [
-        { "outcome": "Log a shipped feature", "how": "Create with title, description, impact, projectIds, competencyIds." },
-        { "outcome": "Generate review brief", "how": "Filter wins by date range, group by competency — the brief writes itself." }
+        {
+          "outcome": "Log a shipped feature",
+          "how": "Create with title, description, impact, projectIds, competencyIds."
+        },
+        {
+          "outcome": "Generate review brief",
+          "how": "Filter wins by date range, group by competency — the brief writes itself."
+        }
       ],
-      "warnings": ["Don't backdate or embellish. The whole value is honest, contemporaneous record."]
+      "warnings": [
+        "Don't backdate or embellish. The whole value is honest, contemporaneous record."
+      ]
     },
     "icon": "lucide:trophy",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title"],
+      "required": [
+        "title"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
-        "occurredAt": { "type": "string", "title": "When", "format": "date" },
-        "description": { "type": "string", "title": "What happened", "x-ui": { "format": "markdown" } },
-        "impact": { "type": "string", "title": "Impact", "description": "Measurable outcomes — metrics, $, headcount-time saved, etc.", "x-ui": { "format": "markdown" } },
-        "projectIds": { "type": "array", "title": "Projects", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "peopleIds": { "type": "array", "title": "Collaborators", "items": { "type": "string", "x-ref": "memory_people" } },
-        "competencyIds": { "type": "array", "title": "Competencies", "items": { "type": "string", "x-ref": "memory_competencies" } },
-        "evidenceIds": { "type": "array", "title": "Evidence", "items": { "type": "string", "x-ref": "memory_evidence" } }
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "occurredAt": {
+          "type": "string",
+          "title": "When",
+          "format": "date"
+        },
+        "description": {
+          "type": "string",
+          "title": "What happened",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "impact": {
+          "type": "string",
+          "title": "Impact",
+          "description": "Measurable outcomes — metrics, $, headcount-time saved, etc.",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "peopleIds": {
+          "type": "array",
+          "title": "Collaborators",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Competencies",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        },
+        "evidenceIds": {
+          "type": "array",
+          "title": "Evidence",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_evidence"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "transaction",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030009" },
+    "_id": {
+      "$oid": "900000000000000000030009"
+    },
     "key": "memory_competencies",
     "collection": "memory_competencies",
     "title": "Competencies",
@@ -437,41 +1338,130 @@
       "howItWorks": "Seeded once from the user's company rubric. `level` (1-5 or text) describes current self-assessed level. `description` (markdown) is the company's definition.",
       "manipulation": "Define once, update levels as you grow. Don't create new competencies casually — they should match a real rubric.",
       "outcomes": [
-        { "outcome": "Track a competency", "how": "Create with name, level, description." }
+        {
+          "outcome": "Track a competency",
+          "how": "Create with name, level, description."
+        }
       ],
-      "warnings": ["Don't proliferate competencies. Stick to your company's rubric — usually 8-12 dimensions."]
+      "warnings": [
+        "Don't proliferate competencies. Stick to your company's rubric — usually 8-12 dimensions."
+      ]
     },
     "icon": "lucide:target",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "title": "Name", "minLength": 1, "maxLength": 200 },
-        "category": { "type": "string", "title": "Category", "description": "e.g. Technical, Leadership, Craft, Impact.", "maxLength": 100 },
-        "level": { "type": "string", "title": "Current level", "description": "Self-assessed level — e.g. \"Senior\" or \"3 / 5\".", "maxLength": 50 },
-        "description": { "type": "string", "title": "Description", "description": "What this competency means at your company.", "x-ui": { "format": "markdown" } }
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "category": {
+          "type": "string",
+          "title": "Category",
+          "description": "e.g. Technical, Leadership, Craft, Impact.",
+          "maxLength": 100
+        },
+        "level": {
+          "type": "string",
+          "title": "Current level",
+          "description": "Self-assessed level — e.g. \"Senior\" or \"3 / 5\".",
+          "maxLength": 50
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "description": "What this competency means at your company.",
+          "x-ui": {
+            "format": "markdown"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{name}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{name}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
     "tier": 3,
-    "kind": "data",
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "90000000000000000003000a" },
+    "_id": {
+      "$oid": "90000000000000000003000a"
+    },
     "key": "memory_evidence",
     "collection": "memory_evidence",
     "title": "Evidence",
@@ -483,49 +1473,163 @@
       "howItWorks": "`url` for the canonical link (PR, doc, screenshot), `kind` to categorize (pr, doc, screenshot, metric, quote, other), `description` markdown to explain significance.",
       "manipulation": "Drop evidence in liberally — cheap to create, expensive to lose. Always link to the win or competency it supports.",
       "outcomes": [
-        { "outcome": "Cite a PR", "how": "Create with url, kind=pr, description, winIds, competencyIds." }
+        {
+          "outcome": "Cite a PR",
+          "how": "Create with url, kind=pr, description, winIds, competencyIds."
+        }
       ],
-      "warnings": ["Don't paste secrets or private customer data into description — keep it shareable."]
+      "warnings": [
+        "Don't paste secrets or private customer data into description — keep it shareable."
+      ]
     },
     "icon": "lucide:file-search",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "kind"],
+      "required": [
+        "title",
+        "kind"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
         "kind": {
-          "type": "string", "title": "Kind",
-          "enum": ["pr", "doc", "screenshot", "metric", "quote", "other"],
+          "type": "string",
+          "title": "Kind",
+          "enum": [
+            "pr",
+            "doc",
+            "screenshot",
+            "metric",
+            "quote",
+            "other"
+          ],
           "default": "other"
         },
-        "url": { "type": "string", "title": "URL", "format": "uri" },
-        "description": { "type": "string", "title": "Description", "x-ui": { "format": "markdown" } },
-        "occurredAt": { "type": "string", "title": "When", "format": "date" },
-        "personId": { "type": "string", "title": "Source person", "description": "Who said it / made it (for quotes, PR authors).", "x-ref": "memory_people" },
-        "projectIds": { "type": "array", "title": "Projects", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "competencyIds": { "type": "array", "title": "Competencies", "items": { "type": "string", "x-ref": "memory_competencies" } }
+        "url": {
+          "type": "string",
+          "title": "URL",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "occurredAt": {
+          "type": "string",
+          "title": "When",
+          "format": "date"
+        },
+        "personId": {
+          "type": "string",
+          "title": "Source person",
+          "description": "Who said it / made it (for quotes, PR authors).",
+          "x-ref": "memory_people"
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Competencies",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 2,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "90000000000000000003000b" },
+    "_id": {
+      "$oid": "90000000000000000003000b"
+    },
     "key": "memory_reviews",
     "collection": "memory_reviews",
     "title": "Reviews",
@@ -537,50 +1641,173 @@
       "howItWorks": "`period` (e.g. \"H1 2026\"), `kind` (self, peer, manager, summary), `narrative` (markdown — the body). `competencyAssessments` is a structured map of competency → assessment. References the underlying wins/incidents/evidence for traceability.",
       "manipulation": "Generate at cycle close. Edit narrative freely until the cycle is signed off, then treat as immutable history.",
       "outcomes": [
-        { "outcome": "Prep a review", "how": "Create a memory_reviews record, then the agent populates narrative from linked wins/evidence." }
+        {
+          "outcome": "Prep a review",
+          "how": "Create a memory_reviews record, then the agent populates narrative from linked wins/evidence."
+        }
       ],
-      "warnings": ["Don't delete past reviews even when stale — the trajectory is the story."]
+      "warnings": [
+        "Don't delete past reviews even when stale — the trajectory is the story."
+      ]
     },
     "icon": "lucide:clipboard-check",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["period", "kind"],
+      "required": [
+        "period",
+        "kind"
+      ],
       "properties": {
-        "period": { "type": "string", "title": "Period", "description": "Cycle label, e.g. \"H1 2026\".", "minLength": 1, "maxLength": 100 },
+        "period": {
+          "type": "string",
+          "title": "Period",
+          "description": "Cycle label, e.g. \"H1 2026\".",
+          "minLength": 1,
+          "maxLength": 100
+        },
         "kind": {
-          "type": "string", "title": "Kind",
-          "enum": ["self", "peer", "manager", "summary"],
+          "type": "string",
+          "title": "Kind",
+          "enum": [
+            "self",
+            "peer",
+            "manager",
+            "summary"
+          ],
           "default": "self"
         },
-        "personId": { "type": "string", "title": "Subject", "description": "The person being reviewed (often the user themselves).", "x-ref": "memory_people" },
-        "reviewerId": { "type": "string", "title": "Reviewer", "x-ref": "memory_people" },
-        "narrative": { "type": "string", "title": "Narrative", "x-ui": { "format": "markdown" } },
-        "winIds": { "type": "array", "title": "Wins cited", "items": { "type": "string", "x-ref": "memory_wins" } },
-        "incidentIds": { "type": "array", "title": "Incidents cited", "items": { "type": "string", "x-ref": "memory_incidents" } },
-        "evidenceIds": { "type": "array", "title": "Evidence cited", "items": { "type": "string", "x-ref": "memory_evidence" } },
-        "competencyIds": { "type": "array", "title": "Competencies covered", "items": { "type": "string", "x-ref": "memory_competencies" } }
+        "personId": {
+          "type": "string",
+          "title": "Subject",
+          "description": "The person being reviewed (often the user themselves).",
+          "x-ref": "memory_people"
+        },
+        "reviewerId": {
+          "type": "string",
+          "title": "Reviewer",
+          "x-ref": "memory_people"
+        },
+        "narrative": {
+          "type": "string",
+          "title": "Narrative",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "winIds": {
+          "type": "array",
+          "title": "Wins cited",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_wins"
+          }
+        },
+        "incidentIds": {
+          "type": "array",
+          "title": "Incidents cited",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_incidents"
+          }
+        },
+        "evidenceIds": {
+          "type": "array",
+          "title": "Evidence cited",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_evidence"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Competencies covered",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{period}} \u2014 {{kind}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{period}} — {{kind}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "transaction",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "90000000000000000003000c" },
+    "_id": {
+      "$oid": "90000000000000000003000c"
+    },
     "key": "memory_goals",
     "collection": "memory_goals",
     "title": "Goals",
@@ -592,54 +1819,170 @@
       "howItWorks": "`horizon` (north_star / annual / quarterly / monthly) sets time scale. `status` (active/achieved/missed/dropped) tracks outcome. `parentGoalId` chains a quarterly goal up to the annual it supports.",
       "manipulation": "Set quarterly goals at start of each quarter. Mark status at quarter close — never silently delete missed goals; the misses are data.",
       "outcomes": [
-        { "outcome": "Set quarterly goals", "how": "Create 3-5 goals with horizon=quarterly, status=active." }
+        {
+          "outcome": "Set quarterly goals",
+          "how": "Create 3-5 goals with horizon=quarterly, status=active."
+        }
       ],
-      "warnings": ["Don't have more than ~5 active goals at any horizon — focus is the point."]
+      "warnings": [
+        "Don't have more than ~5 active goals at any horizon — focus is the point."
+      ]
     },
     "icon": "lucide:flag",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title", "horizon", "status"],
+      "required": [
+        "title",
+        "horizon",
+        "status"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
         "horizon": {
-          "type": "string", "title": "Horizon",
-          "enum": ["north_star", "annual", "quarterly", "monthly"],
+          "type": "string",
+          "title": "Horizon",
+          "enum": [
+            "north_star",
+            "annual",
+            "quarterly",
+            "monthly"
+          ],
           "default": "quarterly"
         },
         "status": {
-          "type": "string", "title": "Status",
-          "enum": ["active", "achieved", "missed", "dropped"],
+          "type": "string",
+          "title": "Status",
+          "enum": [
+            "active",
+            "achieved",
+            "missed",
+            "dropped"
+          ],
           "default": "active"
         },
-        "description": { "type": "string", "title": "Description", "x-ui": { "format": "markdown" } },
-        "metric": { "type": "string", "title": "Metric", "description": "How you'll know — the measurable target.", "maxLength": 500 },
-        "startedAt": { "type": "string", "title": "Starts", "format": "date" },
-        "endedAt": { "type": "string", "title": "Ends", "format": "date" },
-        "parentGoalId": { "type": "string", "title": "Parent goal", "x-ref": "memory_goals" },
-        "projectIds": { "type": "array", "title": "Projects advancing this", "items": { "type": "string", "x-ref": "memory_projects" } }
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "metric": {
+          "type": "string",
+          "title": "Metric",
+          "description": "How you'll know — the measurable target.",
+          "maxLength": 500
+        },
+        "startedAt": {
+          "type": "string",
+          "title": "Starts",
+          "format": "date"
+        },
+        "endedAt": {
+          "type": "string",
+          "title": "Ends",
+          "format": "date"
+        },
+        "parentGoalId": {
+          "type": "string",
+          "title": "Parent goal",
+          "x-ref": "memory_goals"
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects advancing this",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "90000000000000000003000d" },
+    "_id": {
+      "$oid": "90000000000000000003000d"
+    },
     "key": "memory_topics",
     "collection": "memory_topics",
     "title": "Topics",
@@ -651,43 +1994,148 @@
       "howItWorks": "`title` is the topic (\"Distributed consensus\", \"How our billing pipeline works\"). `body` (markdown) is the content. Cross-link via peopleIds/projectIds/competencyIds when relevant.",
       "manipulation": "Create when the user shares a learned insight that isn't a decision, win, or pattern. Update freely as understanding evolves.",
       "outcomes": [
-        { "outcome": "Capture knowledge", "how": "Create with title and markdown body." }
+        {
+          "outcome": "Capture knowledge",
+          "how": "Create with title and markdown body."
+        }
       ],
-      "warnings": ["If it's a recommendation pattern (\"always do X\"), use memory_patterns instead. If it's a one-time choice, use memory_decisions."]
+      "warnings": [
+        "If it's a recommendation pattern (\"always do X\"), use memory_patterns instead. If it's a one-time choice, use memory_decisions."
+      ]
     },
     "icon": "lucide:book",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title"],
+      "required": [
+        "title"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
-        "body": { "type": "string", "title": "Body", "x-ui": { "format": "markdown" } },
-        "tagIds": { "type": "array", "title": "Tags", "items": { "type": "string" } },
-        "peopleIds": { "type": "array", "title": "Related people", "items": { "type": "string", "x-ref": "memory_people" } },
-        "projectIds": { "type": "array", "title": "Related projects", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "competencyIds": { "type": "array", "title": "Related competencies", "items": { "type": "string", "x-ref": "memory_competencies" } }
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "tagIds": {
+          "type": "array",
+          "title": "Tags",
+          "items": {
+            "type": "string"
+          }
+        },
+        "peopleIds": {
+          "type": "array",
+          "title": "Related people",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Related projects",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Related competencies",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "90000000000000000003000e" },
+    "_id": {
+      "$oid": "90000000000000000003000e"
+    },
     "key": "memory_patterns",
     "collection": "memory_patterns",
     "title": "Patterns",
@@ -699,43 +2147,147 @@
       "howItWorks": "`name` is the pattern (\"Two-phase rollout for risky migrations\"), `whenToUse` describes the trigger, `approach` (markdown) describes the steps, `worksBecause` (markdown) explains why.",
       "manipulation": "Promote a memory_notes entry to a pattern once the user uses the approach twice and validates it works.",
       "outcomes": [
-        { "outcome": "Codify a playbook step", "how": "Create with name, whenToUse, approach, worksBecause." }
+        {
+          "outcome": "Codify a playbook step",
+          "how": "Create with name, whenToUse, approach, worksBecause."
+        }
       ],
-      "warnings": ["A pattern earns its place by repeat success. Don't promote one-off experiments."]
+      "warnings": [
+        "A pattern earns its place by repeat success. Don't promote one-off experiments."
+      ]
     },
     "icon": "lucide:repeat",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "title": "Name", "minLength": 1, "maxLength": 300 },
-        "whenToUse": { "type": "string", "title": "When to use", "x-ui": { "format": "markdown" } },
-        "approach": { "type": "string", "title": "Approach", "x-ui": { "format": "markdown" } },
-        "worksBecause": { "type": "string", "title": "Works because", "x-ui": { "format": "markdown" } },
-        "competencyIds": { "type": "array", "title": "Competencies", "items": { "type": "string", "x-ref": "memory_competencies" } },
-        "evidenceIds": { "type": "array", "title": "Evidence", "items": { "type": "string", "x-ref": "memory_evidence" } }
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "whenToUse": {
+          "type": "string",
+          "title": "When to use",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "approach": {
+          "type": "string",
+          "title": "Approach",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "worksBecause": {
+          "type": "string",
+          "title": "Works because",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Competencies",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        },
+        "evidenceIds": {
+          "type": "array",
+          "title": "Evidence",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_evidence"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{name}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{name}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "90000000000000000003000f" },
+    "_id": {
+      "$oid": "90000000000000000003000f"
+    },
     "key": "memory_gotchas",
     "collection": "memory_gotchas",
     "title": "Gotchas",
@@ -747,43 +2299,147 @@
       "howItWorks": "`name` is the gotcha (\"Mongo $or doesn't use compound indexes\"), `symptom` (markdown) describes how it shows up, `cause` (markdown) the root cause, `avoidance` (markdown) the workaround.",
       "manipulation": "Create whenever the user gets bitten and figures out why. Keep tight — one gotcha per record.",
       "outcomes": [
-        { "outcome": "Record a footgun", "how": "Create with name, symptom, cause, avoidance." }
+        {
+          "outcome": "Record a footgun",
+          "how": "Create with name, symptom, cause, avoidance."
+        }
       ],
-      "warnings": ["If the cause turns out to be a real bug worth fixing upstream, file evidence linking the fix."]
+      "warnings": [
+        "If the cause turns out to be a real bug worth fixing upstream, file evidence linking the fix."
+      ]
     },
     "icon": "lucide:alert-triangle",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["name"],
+      "required": [
+        "name"
+      ],
       "properties": {
-        "name": { "type": "string", "title": "Name", "minLength": 1, "maxLength": 300 },
-        "symptom": { "type": "string", "title": "Symptom", "x-ui": { "format": "markdown" } },
-        "cause": { "type": "string", "title": "Cause", "x-ui": { "format": "markdown" } },
-        "avoidance": { "type": "string", "title": "Avoidance", "x-ui": { "format": "markdown" } },
-        "projectIds": { "type": "array", "title": "Projects bitten", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "incidentIds": { "type": "array", "title": "Related incidents", "items": { "type": "string", "x-ref": "memory_incidents" } }
+        "name": {
+          "type": "string",
+          "title": "Name",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "symptom": {
+          "type": "string",
+          "title": "Symptom",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "cause": {
+          "type": "string",
+          "title": "Cause",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "avoidance": {
+          "type": "string",
+          "title": "Avoidance",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects bitten",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "incidentIds": {
+          "type": "array",
+          "title": "Related incidents",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_incidents"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{name}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{name}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "entity",
     "systemManaged": true
   },
   {
-    "_id": { "$oid": "900000000000000000030010" },
+    "_id": {
+      "$oid": "900000000000000000030010"
+    },
     "key": "memory_notes",
     "collection": "memory_notes",
     "title": "Notes",
@@ -795,39 +2451,142 @@
       "howItWorks": "Markdown body, loose refs to whatever it touches. Triage later — promote good ones into memory_decisions, memory_patterns, memory_topics; archive or delete chaff.",
       "manipulation": "Create freely. Periodically review and promote.",
       "outcomes": [
-        { "outcome": "Capture a half-baked thought", "how": "Create with title and body." }
+        {
+          "outcome": "Capture a half-baked thought",
+          "how": "Create with title and body."
+        }
       ],
-      "warnings": ["Don't let notes become the only place things live. If something is durable knowledge, promote it."]
+      "warnings": [
+        "Don't let notes become the only place things live. If something is durable knowledge, promote it."
+      ]
     },
     "icon": "lucide:sticky-note",
-    "appId": { "$oid": "900000000000000000000001" },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
     "schema": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["title"],
+      "required": [
+        "title"
+      ],
       "properties": {
-        "title": { "type": "string", "title": "Title", "minLength": 1, "maxLength": 300 },
-        "body": { "type": "string", "title": "Body", "x-ui": { "format": "markdown" } },
-        "tagIds": { "type": "array", "title": "Tags", "items": { "type": "string" } },
-        "peopleIds": { "type": "array", "title": "People", "items": { "type": "string", "x-ref": "memory_people" } },
-        "projectIds": { "type": "array", "title": "Projects", "items": { "type": "string", "x-ref": "memory_projects" } },
-        "competencyIds": { "type": "array", "title": "Competencies", "items": { "type": "string", "x-ref": "memory_competencies" } }
+        "title": {
+          "type": "string",
+          "title": "Title",
+          "minLength": 1,
+          "maxLength": 300
+        },
+        "body": {
+          "type": "string",
+          "title": "Body",
+          "x-ui": {
+            "format": "markdown"
+          }
+        },
+        "tagIds": {
+          "type": "array",
+          "title": "Tags",
+          "items": {
+            "type": "string"
+          }
+        },
+        "peopleIds": {
+          "type": "array",
+          "title": "People",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_people"
+          }
+        },
+        "projectIds": {
+          "type": "array",
+          "title": "Projects",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_projects"
+          }
+        },
+        "competencyIds": {
+          "type": "array",
+          "title": "Competencies",
+          "items": {
+            "type": "string",
+            "x-ref": "memory_competencies"
+          }
+        }
       }
     },
     "ui": {
-      "display": { "templates": ["{{title}}"] },
-      "prefabs": { "list": "list", "edit": "edit", "show": "show" },
-      "list": { "headerActions": [{ "kind": "new" }, { "kind": "refresh" }, { "kind": "deleteFiltered" }] }
+      "display": {
+        "templates": [
+          "{{title}}"
+        ]
+      },
+      "prefabs": {
+        "list": "list",
+        "edit": "edit",
+        "show": "show"
+      },
+      "list": {
+        "headerActions": [
+          {
+            "kind": "new"
+          },
+          {
+            "kind": "refresh"
+          },
+          {
+            "kind": "deleteFiltered"
+          }
+        ]
+      }
     },
-    "api": { "crud": true, "realtime": true },
+    "api": {
+      "crud": true,
+      "realtime": true
+    },
     "auth": {
-      "read":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "create": { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "edit":   { "groupIds": [{ "$oid": "7000000000000000001d0001" }, { "$oid": "7000000000000000001d0002" }] },
-      "delete": { "groupIds": [{ "$oid": "7000000000000000001d0001" }] }
+      "read": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "create": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "edit": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          },
+          {
+            "$oid": "7000000000000000001d0002"
+          }
+        ]
+      },
+      "delete": {
+        "groupIds": [
+          {
+            "$oid": "7000000000000000001d0001"
+          }
+        ]
+      }
     },
-    "tier": 3,
-    "kind": "data",
+    "tier": 1,
+    "kind": "entity",
     "systemManaged": true
   }
 ]
