@@ -10,7 +10,8 @@
       "file": "apps.json",
       "matchBy": "key",
       "installMode": "shared",
-      "exportFields": ["key", "name", "description", "icon", "enabled", "groupIds", "ai"]
+      "exportFields": ["key", "name", "description", "icon", "enabled", "groupIds", "ai"],
+      "filter": { "key": "mind" }
     },
     {
       "collection": "users",
@@ -48,14 +49,14 @@
       "file": "dashboards.json",
       "matchBy": "_id",
       "installMode": "installConfig",
-      "exportFields": ["appId", "name", "icon", "isHome", "interactive", "groupIds", "statusId", "gridsterConfigId", "tiles"]
+      "exportFields": ["appId", "name", "icon", "isHome", "interactive", "groupIds", "statusId", "gridsterConfigId", "tiles", "systemManaged"]
     },
     {
       "collection": "windows",
       "file": "windows.json",
       "matchBy": "_id",
       "installMode": "installConfig",
-      "exportFields": ["dashboardId", "title", "icon", "groupIds", "modelId", "prefabId", "prefabConfig"]
+      "exportFields": ["dashboardId", "title", "icon", "groupIds", "modelId", "prefabId", "prefabConfig", "systemManaged"]
     }
   ]
 }

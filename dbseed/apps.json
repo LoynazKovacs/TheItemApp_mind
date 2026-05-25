@@ -1,16 +1,21 @@
 [
   {
-    "_id": { "$oid": "900000000000000000000001" },
+    "_id": {
+      "$oid": "900000000000000000000001"
+    },
     "key": "mind",
     "name": "Mind",
     "description": "Your second brain. Persistent memory across AI sessions — people, projects, decisions, wins, competencies, and more. Every record links to the others, so the graph builds itself as you work.",
     "icon": "lucide:brain",
     "enabled": true,
     "groupIds": [
-      { "$oid": "7000000000000000001d0001" },
-      { "$oid": "7000000000000000001d0002" }
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
     ],
-    "cantDelete": false,
     "ai": {
       "systemPrompt": "Mind is a personal-memory app. Its 16 memory_* collections (people, teams, projects, meetings, decisions, incidents, action_items, wins, competencies, evidence, reviews, goals, topics, patterns, gotchas, notes) are designed for an AI agent to write into as the user talks. When the user mentions a person, decision, win, or anything else memory_* can hold, create or update the relevant record AND populate every x-ref field that applies — peopleIds, projectIds, competencyIds, etc. The graph is the point: a record without links is a bug. Use the markdown `description` field on each record as the primary content."
     }
