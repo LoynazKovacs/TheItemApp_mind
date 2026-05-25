@@ -1,0 +1,3 @@
+# Seeds-only app image — inherits seed server from base image.
+FROM europe-central2-docker.pkg.dev/theitemapp/theitemapp/seed-server:1.0.0
+COPY dbseed/ /app/dbseed/

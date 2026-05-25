@@ -1,0 +1,13 @@
+{
+  "name": "mind",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mind — personal memory app for TheItemApp. Persistent knowledge vault inspired by obsidian-mind, built on the platform's schema registry + knowledge graph.",
+  "scripts": {
+    "start": "docker compose up -d --build",
+    "stop": "docker compose down",
+    "up": "docker compose up -d --build",
+    "down": "docker compose down",
+    "logs": "docker compose logs -f"
+  }
+}

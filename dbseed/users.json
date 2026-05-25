@@ -1,0 +1,13 @@
+[
+  {
+    "_id": { "$oid": "900000000000000000060001" },
+    "username": "mind-backend",
+    "usernameLower": "mind-backend",
+    "isFunctional": true,
+    "isSystem": false,
+    "appId": { "$oid": "900000000000000000000001" },
+    "groupIds": [
+      { "$oid": "7000000000000000001d0001" }
+    ]
+  }
+]

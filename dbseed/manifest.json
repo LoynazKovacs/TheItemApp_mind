@@ -1,0 +1,61 @@
+{
+  "version": 2,
+  "appKey": "mind",
+  "appVersion": "1.0.0",
+  "engineRequires": ">=1.0.0",
+  "requiresCore": true,
+  "collections": [
+    {
+      "collection": "apps",
+      "file": "apps.json",
+      "matchBy": "key",
+      "installMode": "shared",
+      "exportFields": ["key", "name", "description", "icon", "enabled", "groupIds", "ai"]
+    },
+    {
+      "collection": "users",
+      "file": "users.json",
+      "matchBy": "_id",
+      "installMode": "shared",
+      "exportFields": ["username", "usernameLower", "isFunctional", "isSystem", "appId", "groupIds"]
+    },
+    {
+      "collection": "items",
+      "file": "items.json",
+      "matchBy": "key",
+      "installMode": "shared",
+      "exportFields": [
+        "key",
+        "collection",
+        "title",
+        "titleSingular",
+        "titlePlural",
+        "description",
+        "ai",
+        "icon",
+        "appId",
+        "schema",
+        "ui",
+        "api",
+        "auth",
+        "tier",
+        "kind"
+      ],
+      "filter": { "appId": "<thisAppId>" }
+    },
+    {
+      "collection": "dashboards",
+      "file": "dashboards.json",
+      "matchBy": "_id",
+      "installMode": "installConfig",
+      "exportFields": ["appId", "name", "icon", "isHome", "interactive", "groupIds", "statusId", "gridsterConfigId", "tiles"]
+    },
+    {
+      "collection": "windows",
+      "file": "windows.json",
+      "matchBy": "_id",
+      "installMode": "installConfig",
+      "exportFields": ["dashboardId", "title", "icon", "groupIds", "modelId", "prefabId", "prefabConfig"]
+    }
+  ]
+}

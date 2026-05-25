@@ -1,0 +1,19 @@
+# Mind app — joins core's theitemapp network.
+# Usage: docker compose up -d --build
+#
+# Seed-only satellite: ships data models (memory_*) + home dashboard.
+# All UI is provided by core's default list/edit/show prefabs.
+
+services:
+  mind-seeds:
+    build:
+      context: .
+      dockerfile: Dockerfile.seeds
+    environment:
+      APP_REGISTRATION_KEY: "${APP_REGISTRATION_KEY:-}"
+    restart: unless-stopped
+
+networks:
+  default:
+    name: theitemapp
+    external: true
