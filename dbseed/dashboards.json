@@ -5,7 +5,7 @@
     "name": "Mind Home",
     "icon": "lucide:brain",
     "isHome": true,
-    "interactive": true,
+    "interactive": false,
     "groupIds": [
       { "$oid": "7000000000000000001d0001" },
       { "$oid": "7000000000000000001d0002" }
