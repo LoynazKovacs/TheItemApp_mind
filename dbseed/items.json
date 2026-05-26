@@ -79,6 +79,17 @@
           "x-ui": {
             "format": "markdown"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -398,6 +409,17 @@
           "title": "Supersedes",
           "description": "Earlier decision this one replaces.",
           "x-ref": "memory_decisions"
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -565,6 +587,17 @@
             "type": "string",
             "x-ref": "memory_competencies"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -739,6 +772,17 @@
             "type": "string",
             "x-ref": "memory_projects"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -890,6 +934,17 @@
             "type": "string",
             "x-ref": "memory_incidents"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -1083,6 +1138,17 @@
             "type": "string",
             "x-ref": "memory_competencies"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -1244,6 +1310,17 @@
           "x-ui": {
             "format": "markdown"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -1396,6 +1473,17 @@
             "type": "string",
             "x-ref": "memory_competencies"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -1547,6 +1635,17 @@
             "type": "string",
             "x-ref": "memory_evidence"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -1706,6 +1805,17 @@
           "x-ui": {
             "format": "markdown"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -1873,6 +1983,17 @@
           "type": "string",
           "title": "Ended",
           "format": "date"
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -2050,6 +2171,17 @@
             "type": "string",
             "x-ref": "memory_competencies"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -2329,6 +2461,17 @@
             "type": "string",
             "x-ref": "memory_competencies"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
@@ -2499,6 +2642,17 @@
             "type": "string",
             "x-ref": "memory_evidence"
           }
+        },
+        "attachmentModelKey": {
+          "type": "string",
+          "title": "Attachment model",
+          "description": "Collection key of the attached record (e.g. files, coding_agent_repos). Pair with attachmentId."
+        },
+        "attachmentId": {
+          "type": "string",
+          "title": "Attachment",
+          "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
+          "x-refPath": "attachmentModelKey"
         }
       }
     },
