@@ -2154,7 +2154,7 @@
     "description": "Performance review cycles. The aggregated brief — narrative pulled from wins, incidents, evidence over a period.",
     "ai": {
       "purpose": "Snapshot of a review cycle. Once written, doesn't change. The Mind graph generates the first draft from wins+evidence+incidents in the date window.",
-      "howItWorks": "`period` (e.g. \"H1 2026\"), `kind` (self, peer, manager, summary), `narrative` (markdown — the body). `competencyAssessments` is a structured map of competency → assessment. References the underlying wins/incidents/evidence for traceability.",
+      "howItWorks": "`period` (e.g. \"H1 2026\"), `kind` (self, peer, manager, summary), `narrative` (markdown — the body). Link `competencyIds` for the competencies the review covers, and cite the underlying `winIds`/`incidentIds`/`evidenceIds` for traceability.",
       "manipulation": "Generate at cycle close. Edit narrative freely until the cycle is signed off, then treat as immutable history.",
       "outcomes": [
         {
