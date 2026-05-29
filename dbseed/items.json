@@ -40,7 +40,8 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "Verb-first description of the task (e.g. \"Email Sarah the spec\")."
         },
         "status": {
           "type": "string",
@@ -51,34 +52,40 @@
             "done",
             "cancelled"
           ],
-          "default": "todo"
+          "default": "todo",
+          "description": "todo → in_progress → done (or cancelled)."
         },
         "ownerId": {
           "type": "string",
           "title": "Owner",
-          "x-ref": "memory_people"
+          "x-ref": "memory_people",
+          "description": "The single person responsible for completing this."
         },
         "dueAt": {
           "type": "string",
           "title": "Due",
-          "format": "date"
+          "format": "date",
+          "description": "Optional due date."
         },
         "meetingId": {
           "type": "string",
           "title": "From meeting",
-          "x-ref": "memory_meetings"
+          "x-ref": "memory_meetings",
+          "description": "Meeting this action item was spawned from."
         },
         "projectId": {
           "type": "string",
           "title": "Project",
-          "x-ref": "memory_projects"
+          "x-ref": "memory_projects",
+          "description": "Project this action item advances."
         },
         "notes": {
           "type": "string",
           "title": "Notes",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "Extra detail or context (markdown)."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -203,7 +210,8 @@
           "type": "string",
           "title": "Name",
           "minLength": 1,
-          "maxLength": 200
+          "maxLength": 200,
+          "description": "Competency name (e.g. \"Technical depth\")."
         },
         "category": {
           "type": "string",
@@ -220,7 +228,7 @@
         "description": {
           "type": "string",
           "title": "Description",
-          "description": "What this competency means at your company.",
+          "description": "What this competency means at your company (markdown).",
           "x-ui": {
             "format": "markdown"
           }
@@ -342,7 +350,8 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "The decision stated in active voice (e.g. \"Use Redis for session cache\")."
         },
         "status": {
           "type": "string",
@@ -353,40 +362,46 @@
             "superseded",
             "deprecated"
           ],
-          "default": "accepted"
+          "default": "accepted",
+          "description": "Lifecycle: proposed → accepted → superseded → deprecated."
         },
         "decidedAt": {
           "type": "string",
           "title": "Decided",
-          "format": "date"
+          "format": "date",
+          "description": "Date the decision was made."
         },
         "context": {
           "type": "string",
           "title": "Context",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The problem or situation that prompted the decision (markdown)."
         },
         "decision": {
           "type": "string",
           "title": "Decision",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The actual choice that was made (markdown)."
         },
         "rationale": {
           "type": "string",
           "title": "Rationale",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "Why this choice over the alternatives (markdown)."
         },
         "consequences": {
           "type": "string",
           "title": "Consequences",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "Tradeoffs and follow-on effects (markdown)."
         },
         "projectIds": {
           "type": "array",
@@ -394,7 +409,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects this decision pertains to."
         },
         "peopleIds": {
           "type": "array",
@@ -402,7 +418,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "People who made or owned the decision."
         },
         "supersedesId": {
           "type": "string",
@@ -534,7 +551,8 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "Short label for the artifact."
         },
         "kind": {
           "type": "string",
@@ -547,24 +565,28 @@
             "quote",
             "other"
           ],
-          "default": "other"
+          "default": "other",
+          "description": "Artifact type: pr, doc, screenshot, metric, quote, or other."
         },
         "url": {
           "type": "string",
           "title": "URL",
-          "format": "uri"
+          "format": "uri",
+          "description": "Canonical link to the artifact."
         },
         "description": {
           "type": "string",
           "title": "Description",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "Why this evidence matters (markdown)."
         },
         "occurredAt": {
           "type": "string",
           "title": "When",
-          "format": "date"
+          "format": "date",
+          "description": "When the artifact was created or captured."
         },
         "personId": {
           "type": "string",
@@ -578,7 +600,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects this evidence relates to."
         },
         "competencyIds": {
           "type": "array",
@@ -586,7 +609,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies this evidence supports."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -713,7 +737,8 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "The goal stated as an outcome."
         },
         "horizon": {
           "type": "string",
@@ -724,7 +749,8 @@
             "quarterly",
             "monthly"
           ],
-          "default": "quarterly"
+          "default": "quarterly",
+          "description": "Time scale: north_star, annual, quarterly, or monthly."
         },
         "status": {
           "type": "string",
@@ -735,14 +761,16 @@
             "missed",
             "dropped"
           ],
-          "default": "active"
+          "default": "active",
+          "description": "active → achieved / missed / dropped."
         },
         "description": {
           "type": "string",
           "title": "Description",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "What the goal is and why it matters (markdown)."
         },
         "metric": {
           "type": "string",
@@ -753,17 +781,20 @@
         "startedAt": {
           "type": "string",
           "title": "Starts",
-          "format": "date"
+          "format": "date",
+          "description": "When the goal period begins."
         },
         "endedAt": {
           "type": "string",
           "title": "Ends",
-          "format": "date"
+          "format": "date",
+          "description": "When the goal period ends."
         },
         "parentGoalId": {
           "type": "string",
           "title": "Parent goal",
-          "x-ref": "memory_goals"
+          "x-ref": "memory_goals",
+          "description": "Higher-horizon goal this one supports."
         },
         "projectIds": {
           "type": "array",
@@ -771,7 +802,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects that advance this goal."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -896,28 +928,32 @@
           "type": "string",
           "title": "Name",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "The gotcha, stated tightly (e.g. \"Mongo $or doesn't use compound indexes\")."
         },
         "symptom": {
           "type": "string",
           "title": "Symptom",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "How the problem shows up (markdown)."
         },
         "cause": {
           "type": "string",
           "title": "Cause",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The root cause (markdown)."
         },
         "avoidance": {
           "type": "string",
           "title": "Avoidance",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The workaround or how to avoid it (markdown)."
         },
         "projectIds": {
           "type": "array",
@@ -925,7 +961,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects bitten by this gotcha."
         },
         "incidentIds": {
           "type": "array",
@@ -933,7 +970,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_incidents"
-          }
+          },
+          "description": "Incidents related to this gotcha."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -1064,7 +1102,8 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "Short incident name."
         },
         "severity": {
           "type": "integer",
@@ -1082,38 +1121,44 @@
             "resolved",
             "postmortem"
           ],
-          "default": "active"
+          "default": "active",
+          "description": "Lifecycle: active → mitigated → resolved → postmortem."
         },
         "occurredAt": {
           "type": "string",
           "title": "Occurred",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "When the incident started."
         },
         "resolvedAt": {
           "type": "string",
           "title": "Resolved",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "When the incident was resolved."
         },
         "summary": {
           "type": "string",
           "title": "Summary",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "What happened, in brief (markdown)."
         },
         "rootCause": {
           "type": "string",
           "title": "Root cause",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The underlying systemic cause (markdown)."
         },
         "remediation": {
           "type": "string",
           "title": "Remediation",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "What was done to fix it and prevent recurrence (markdown)."
         },
         "projectIds": {
           "type": "array",
@@ -1121,7 +1166,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects affected."
         },
         "peopleIds": {
           "type": "array",
@@ -1129,7 +1175,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "Responders."
         },
         "competencyIds": {
           "type": "array",
@@ -1137,7 +1184,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies demonstrated during the response."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -1267,7 +1315,8 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "Meeting title."
         },
         "type": {
           "type": "string",
@@ -1281,12 +1330,14 @@
             "interview",
             "other"
           ],
-          "default": "other"
+          "default": "other",
+          "description": "Meeting kind: 1:1, standup, planning, review, customer, interview, or other."
         },
         "occurredAt": {
           "type": "string",
           "title": "When",
-          "format": "date-time"
+          "format": "date-time",
+          "description": "When the meeting took place."
         },
         "peopleIds": {
           "type": "array",
@@ -1294,7 +1345,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "Attendees."
         },
         "projectIds": {
           "type": "array",
@@ -1302,14 +1354,16 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects discussed."
         },
         "notes": {
           "type": "string",
           "title": "Notes",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "Summary of what was discussed (markdown). The primary content of the record."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -1434,21 +1488,24 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "Short label for the note."
         },
         "body": {
           "type": "string",
           "title": "Body",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The note content (markdown)."
         },
         "tagIds": {
           "type": "array",
           "title": "Tags",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "Loose labels for triage."
         },
         "peopleIds": {
           "type": "array",
@@ -1456,7 +1513,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "People this note touches."
         },
         "projectIds": {
           "type": "array",
@@ -1464,7 +1522,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects this note touches."
         },
         "competencyIds": {
           "type": "array",
@@ -1472,7 +1531,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies this note touches."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -1597,28 +1657,32 @@
           "type": "string",
           "title": "Name",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "The pattern, named as a reusable approach (e.g. \"Two-phase rollout for risky migrations\")."
         },
         "whenToUse": {
           "type": "string",
           "title": "When to use",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The trigger or situation where this pattern applies (markdown)."
         },
         "approach": {
           "type": "string",
           "title": "Approach",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The steps to follow (markdown)."
         },
         "worksBecause": {
           "type": "string",
           "title": "Works because",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "Why the approach works (markdown)."
         },
         "competencyIds": {
           "type": "array",
@@ -1626,7 +1690,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies this pattern exercises."
         },
         "evidenceIds": {
           "type": "array",
@@ -1634,7 +1699,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_evidence"
-          }
+          },
+          "description": "Evidence that the pattern works."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -1788,7 +1854,8 @@
         "email": {
           "type": "string",
           "title": "Email",
-          "format": "email"
+          "format": "email",
+          "description": "Email address."
         },
         "tagIds": {
           "type": "array",
@@ -1934,14 +2001,16 @@
           "type": "string",
           "title": "Name",
           "minLength": 1,
-          "maxLength": 200
+          "maxLength": 200,
+          "description": "Project name."
         },
         "description": {
           "type": "string",
           "title": "Description",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "What the project is and its scope (markdown)."
         },
         "status": {
           "type": "string",
@@ -1953,12 +2022,14 @@
             "done",
             "archived"
           ],
-          "default": "active"
+          "default": "active",
+          "description": "Lifecycle stage: planning → active → paused → done → archived."
         },
         "teamId": {
           "type": "string",
           "title": "Team",
-          "x-ref": "memory_teams"
+          "x-ref": "memory_teams",
+          "description": "Team that owns this project."
         },
         "leadPersonId": {
           "type": "string",
@@ -1972,17 +2043,20 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "Other people contributing to the project."
         },
         "startedAt": {
           "type": "string",
           "title": "Started",
-          "format": "date"
+          "format": "date",
+          "description": "Date work began."
         },
         "endedAt": {
           "type": "string",
           "title": "Ended",
-          "format": "date"
+          "format": "date",
+          "description": "Date the project finished or was archived."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -2120,7 +2194,8 @@
             "manager",
             "summary"
           ],
-          "default": "self"
+          "default": "self",
+          "description": "Review type: self, peer, manager, or summary."
         },
         "personId": {
           "type": "string",
@@ -2131,14 +2206,16 @@
         "reviewerId": {
           "type": "string",
           "title": "Reviewer",
-          "x-ref": "memory_people"
+          "x-ref": "memory_people",
+          "description": "Who is giving the review."
         },
         "narrative": {
           "type": "string",
           "title": "Narrative",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The review body — the written assessment (markdown)."
         },
         "winIds": {
           "type": "array",
@@ -2146,7 +2223,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_wins"
-          }
+          },
+          "description": "Wins cited in this review."
         },
         "incidentIds": {
           "type": "array",
@@ -2154,7 +2232,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_incidents"
-          }
+          },
+          "description": "Incidents cited in this review."
         },
         "evidenceIds": {
           "type": "array",
@@ -2162,7 +2241,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_evidence"
-          }
+          },
+          "description": "Evidence cited in this review."
         },
         "competencyIds": {
           "type": "array",
@@ -2170,7 +2250,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies covered by this review."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -2295,14 +2376,16 @@
           "type": "string",
           "title": "Name",
           "minLength": 1,
-          "maxLength": 200
+          "maxLength": 200,
+          "description": "Team name — keep it short and stable."
         },
         "description": {
           "type": "string",
           "title": "Description",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "What this team does (markdown)."
         },
         "parentTeamId": {
           "type": "string",
@@ -2422,21 +2505,24 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "The topic name (e.g. \"Distributed consensus\")."
         },
         "body": {
           "type": "string",
           "title": "Body",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The knowledge content (markdown)."
         },
         "tagIds": {
           "type": "array",
           "title": "Tags",
           "items": {
             "type": "string"
-          }
+          },
+          "description": "Loose labels for grouping topics."
         },
         "peopleIds": {
           "type": "array",
@@ -2444,7 +2530,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "People related to this topic."
         },
         "projectIds": {
           "type": "array",
@@ -2452,7 +2539,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects related to this topic."
         },
         "competencyIds": {
           "type": "array",
@@ -2460,7 +2548,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies related to this topic."
         },
         "attachmentModelKey": {
           "type": "string",
@@ -2589,19 +2678,22 @@
           "type": "string",
           "title": "Title",
           "minLength": 1,
-          "maxLength": 300
+          "maxLength": 300,
+          "description": "Short headline for the accomplishment."
         },
         "occurredAt": {
           "type": "string",
           "title": "When",
-          "format": "date"
+          "format": "date",
+          "description": "When it happened."
         },
         "description": {
           "type": "string",
           "title": "What happened",
           "x-ui": {
             "format": "markdown"
-          }
+          },
+          "description": "The story — what you did and how (markdown)."
         },
         "impact": {
           "type": "string",
@@ -2617,7 +2709,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_projects"
-          }
+          },
+          "description": "Projects this win relates to."
         },
         "peopleIds": {
           "type": "array",
@@ -2625,7 +2718,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_people"
-          }
+          },
+          "description": "Collaborators who contributed."
         },
         "competencyIds": {
           "type": "array",
@@ -2633,7 +2727,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_competencies"
-          }
+          },
+          "description": "Competencies this win demonstrates."
         },
         "evidenceIds": {
           "type": "array",
@@ -2641,7 +2736,8 @@
           "items": {
             "type": "string",
             "x-ref": "memory_evidence"
-          }
+          },
+          "description": "Hard artifacts backing the win."
         },
         "attachmentModelKey": {
           "type": "string",
