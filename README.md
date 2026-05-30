@@ -81,10 +81,14 @@ docker-compose.yml / Dockerfile.seeds   one-shot seed server for install
 ## Local commands
 
 ```bash
-npm run up      # docker compose up -d --build (seed server)
+npm start       # docker compose up -d --build (seed server) — alias: npm run up
 npm run logs    # follow seed logs
-npm run down    # docker compose down
+npm stop        # docker compose down — alias: npm run down
 ```
+
+The seed server registers the app against core on boot. The `mind-seeds` service reads an
+optional `APP_REGISTRATION_KEY` from the environment (passed through by `docker-compose.yml`);
+set it if core requires a registration key.
 
 Re-export the seed from the live DB after editing records via MCP/UI:
 `repo_export_seed` against the Mind repo, then commit the `dbseed/` diff.
