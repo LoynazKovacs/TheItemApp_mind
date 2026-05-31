@@ -1,0 +1,327 @@
+[
+  {
+    "_id": {
+      "$oid": "6a1bfc467289f6537cee6ec2"
+    },
+    "key": "mind.welcome",
+    "title": "Welcome to Mind",
+    "subtitle": "A guided tour of your second brain",
+    "description": "An interactive walkthrough of the Mind app: open it, land on the Mind Home dashboard, and meet each of the 16 memory windows — people, teams, projects, meetings, decisions, incidents, action items, wins, competencies, evidence, reviews, goals, topics, patterns, gotchas and notes — learning what each holds and how they link into one knowledge graph.",
+    "appKey": "mind",
+    "mode": "tour",
+    "audience": "user",
+    "isPublished": true,
+    "version": 1,
+    "tags": [
+      "mind",
+      "welcome",
+      "onboarding"
+    ],
+    "steps": [
+      {
+        "id": "intro",
+        "placement": "center",
+        "title": "Welcome to Mind",
+        "body": "**Mind** is your second brain — persistent memory that survives across AI sessions. It holds the people, projects, decisions, wins and lessons of your work, and every record links to the others, so the **graph builds itself** as you go.\n\nLet's open it and walk through each part. Use **Next** to step along, or **Esc** to leave anytime.",
+        "beforeShow": {},
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "open-menu",
+        "anchorKey": "sidebar-toolbar-row-left",
+        "placement": "bottom",
+        "title": "Open your menu",
+        "body": "Everything starts from the **menu** on the left. Click any highlighted button to open it — I'll continue as soon as it's open.",
+        "beforeShow": {},
+        "showIf": {
+          "selectorExists": "[data-testid=\"sidebar-toolbar-row-left\"] button",
+          "selectorMissing": "[data-testid=\"window-people\"], [data-testid=\"sidebar-left\"].open"
+        },
+        "advanceOn": {
+          "event": "click",
+          "matchDescendant": "button"
+        },
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "open-mind",
+        "anchorKey": "core.sidebar.app.mind",
+        "placement": "right",
+        "title": "Open the Mind app",
+        "body": "Here's the **Mind** app in your menu. Click its name to open it — you'll land straight on its home dashboard.",
+        "beforeShow": {
+          "waitForSelector": "[data-testid=\"core.sidebar.app.mind\"]",
+          "delayMs": 200
+        },
+        "showIf": {
+          "selectorMissing": "[data-testid=\"window-people\"]"
+        },
+        "advanceOn": {
+          "event": "click",
+          "matchDescendant": ".labelBtn"
+        },
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "home-dashboard",
+        "anchorKey": "core.desktop.canvas",
+        "placement": "top",
+        "title": "Mind Home",
+        "body": "This is **Mind Home** — the app's default dashboard, now set as your desktop background. Each tile is a live window onto one kind of memory. Let's look at them one at a time.",
+        "beforeShow": {
+          "waitForSelector": "[data-testid=\"core.desktop.canvas\"]",
+          "delayMs": 500
+        },
+        "showIf": {
+          "selectorMissing": "[data-testid=\"window-people\"]"
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "people",
+        "anchorSelector": "gridster-item:nth-of-type(1)",
+        "placement": "bottom",
+        "title": "People",
+        "body": "**People** are everyone you work with — colleagues, stakeholders, contacts. Most other records point back here, so when you remember a decision or a meeting, you also remember **who** was part of it.",
+        "beforeShow": {
+          "delayMs": 300
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "projects",
+        "anchorSelector": "gridster-item:nth-of-type(2)",
+        "placement": "bottom",
+        "title": "Projects",
+        "body": "**Projects** are the initiatives and efforts you're involved in. They're the spine of the graph — meetings, decisions, action items, wins and incidents all link to the project they belong to.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "meetings",
+        "anchorSelector": "gridster-item:nth-of-type(3)",
+        "placement": "bottom",
+        "title": "Meetings",
+        "body": "**Meetings** capture who met, when, and what came out of it. Link the people who attended and the project it concerned, and the meeting becomes a searchable point in your timeline rather than a lost calendar entry.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "wins",
+        "anchorSelector": "gridster-item:nth-of-type(4)",
+        "placement": "bottom",
+        "title": "Wins",
+        "body": "**Wins** are the things that went well — shipped features, solved problems, good calls. Tie each to the competencies it demonstrates and you've got ready-made evidence for your next review.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "decisions",
+        "anchorSelector": "gridster-item:nth-of-type(5)",
+        "placement": "bottom",
+        "title": "Decisions",
+        "body": "**Decisions** record the choices you made and — crucially — **why**. Six months later, when someone asks \"why did we do it this way?\", the reasoning is right here instead of lost to memory.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "action-items",
+        "anchorSelector": "gridster-item:nth-of-type(6)",
+        "placement": "bottom",
+        "title": "Action Items",
+        "body": "**Action Items** are the follow-ups and to-dos that fall out of meetings, decisions and incidents. Each links back to where it came from, so nothing gets orphaned.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "notes",
+        "anchorSelector": "gridster-item:nth-of-type(7)",
+        "placement": "bottom",
+        "title": "Notes",
+        "body": "**Notes** are the free-form catch-all — anything that doesn't fit a tidier box yet. The rich markdown body is the content; add a person or project ref and even a loose note joins the graph.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "goals",
+        "anchorSelector": "gridster-item:nth-of-type(8)",
+        "placement": "bottom",
+        "title": "Goals",
+        "body": "**Goals** are what you're working toward — quarterly objectives, growth targets, personal aims. Progress on them is told by the wins, projects and competencies that point at them.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "incidents",
+        "anchorSelector": "gridster-item:nth-of-type(9)",
+        "placement": "top",
+        "title": "Incidents",
+        "body": "**Incidents** are when things went wrong — outages, breakages, mistakes. Capturing the what and the fix turns a bad day into a durable lesson, and often spawns action items and gotchas.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "evidence",
+        "anchorSelector": "gridster-item:nth-of-type(10)",
+        "placement": "top",
+        "title": "Evidence",
+        "body": "**Evidence** is the proof behind your story — links, artifacts, metrics, quotes. It backs up competencies and reviews so claims about your impact aren't just assertions.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "competencies",
+        "anchorSelector": "gridster-item:nth-of-type(11)",
+        "placement": "top",
+        "title": "Competencies",
+        "body": "**Competencies** are the skills you're building and demonstrating. Wins and evidence link in as proof, and reviews assess them — this is where your professional growth is tracked over time.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "reviews",
+        "anchorSelector": "gridster-item:nth-of-type(12)",
+        "placement": "top",
+        "title": "Reviews",
+        "body": "**Reviews** are your performance reviews and retrospectives. They cite the competencies assessed and the evidence behind them, so a review writes itself from the graph you've already built.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "topics",
+        "anchorSelector": "gridster-item:nth-of-type(13)",
+        "placement": "top",
+        "title": "Topics",
+        "body": "**Topics** are the subjects and areas of knowledge you care about. Use them to group notes, patterns and gotchas around a theme so related learnings cluster together.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "patterns",
+        "anchorSelector": "gridster-item:nth-of-type(14)",
+        "placement": "top",
+        "title": "Patterns",
+        "body": "**Patterns** are the recurring shapes you've noticed — approaches that keep working, situations that keep repeating. Naming a pattern once lets you reuse the insight everywhere it applies.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "gotchas",
+        "anchorSelector": "gridster-item:nth-of-type(15)",
+        "placement": "top",
+        "title": "Gotchas",
+        "body": "**Gotchas** are the traps learned the hard way — the surprising footguns and edge cases. Writing one down means you (or your AI) never get caught by it twice.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "teams",
+        "anchorSelector": "gridster-item:nth-of-type(16)",
+        "placement": "top",
+        "title": "Teams",
+        "body": "**Teams** are the groups people belong to. Link a person to their team and a project to the teams behind it, and you can see the human structure around any piece of work.",
+        "beforeShow": {
+          "delayMs": 200
+        },
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      },
+      {
+        "id": "outro",
+        "placement": "center",
+        "title": "That's your second brain!",
+        "body": "You've met all sixteen kinds of memory — **people**, **teams** and **projects**; the work itself in **meetings**, **decisions**, **action items**, **incidents** and **wins**; your growth in **competencies**, **evidence**, **reviews** and **goals**; and your knowledge in **notes**, **topics**, **patterns** and **gotchas**.\n\nThe magic is the **links between them** — fill in the refs and the graph builds itself. Just talk to your AI as you work, and Mind remembers. Check the **Help Center** anytime.",
+        "beforeShow": {},
+        "advanceOn": {},
+        "modal": false,
+        "buttons": [],
+        "assertions": []
+      }
+    ]
+  }
+]
