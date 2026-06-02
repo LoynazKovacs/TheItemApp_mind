@@ -63,7 +63,11 @@ Full per-field reference: [`docs/data-model.md`](docs/data-model.md).
 
 ## How agents use it
 
-Mind is designed for an AI agent to write into as the user talks (see `apps.ai.systemPrompt`). When the user mentions a person, decision, win, or anything a `memory_*` collection can hold, the agent creates or updates the relevant record **and** populates every x-ref that applies. The markdown body field on each record (`notes` / `body` / `description` / `narrative`) is the primary content.
+Mind is designed for an AI agent to write into as the user talks. The app-level `apps.ai.systemPrompt` sets the policy ("populate every x-ref that applies — a record without links is a bug"), and each of the 16 models carries its own `ai.howItWorks` guidance block so the agent knows how to fill that specific collection. When the user mentions a person, decision, win, or anything a `memory_*` collection can hold, the agent creates or updates the relevant record **and** populates every x-ref that applies. The markdown body field on each record (`notes` / `body` / `description` / `narrative`) is the primary content.
+
+## Guided tour
+
+A published onboarding scenario, `mind.welcome` (mode `tour`, audience `user`), walks a new user through opening Mind, landing on the Home dashboard, and meeting each of the 16 memory windows in turn. It's seeded from `dbseed/scenarios.json`.
 
 ## Layout
 
@@ -72,9 +76,11 @@ dbseed/
   apps.json        app catalog record (shared)
   items.json       the 16 memory_* model definitions (schema registry)
   users.json       functional app user (shared)
-  dashboards.json  install-config dashboards
-  windows.json     install-config windows
+  dashboards.json  install-config dashboards (Mind Home)
+  windows.json     install-config windows (16 list tiles)
+  scenarios.json   the mind.welcome guided tour (shared, app-scoped)
   manifest.json    seed manifest (collections, matchBy, exportFields)
+  data/            empty — Mind ships no example records; collections start empty
 docker-compose.yml / Dockerfile.seeds   one-shot seed server for install
 ```
 
