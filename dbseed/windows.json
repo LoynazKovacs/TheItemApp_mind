@@ -1,6 +1,342 @@
 [
   {
     "_id": {
+      "$oid": "6a249f4796c7004078c92f91"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Second brain at a glance",
+    "icon": "lucide:brain",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030001"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060019"
+    },
+    "prefabConfig": {
+      "collection": "memory_people",
+      "ui": {
+        "kpi": {
+          "columns": 8,
+          "metrics": [
+            {
+              "label": "People",
+              "icon": "lucide:user",
+              "op": "count",
+              "collection": "memory_people",
+              "color": "#0891b2"
+            },
+            {
+              "label": "Projects",
+              "icon": "lucide:folder-kanban",
+              "op": "count",
+              "collection": "memory_projects",
+              "color": "#7c3aed"
+            },
+            {
+              "label": "Decisions",
+              "icon": "lucide:gavel",
+              "op": "count",
+              "collection": "memory_decisions",
+              "color": "#d97706"
+            },
+            {
+              "label": "Meetings",
+              "icon": "lucide:calendar",
+              "op": "count",
+              "collection": "memory_meetings",
+              "color": "#2563eb"
+            },
+            {
+              "label": "Wins",
+              "icon": "lucide:trophy",
+              "op": "count",
+              "collection": "memory_wins",
+              "color": "#16a34a"
+            },
+            {
+              "label": "Goals",
+              "icon": "lucide:flag",
+              "op": "count",
+              "collection": "memory_goals",
+              "color": "#dc2626"
+            },
+            {
+              "label": "Action Items",
+              "icon": "lucide:check-square",
+              "op": "count",
+              "collection": "memory_action_items",
+              "color": "#0d9488"
+            },
+            {
+              "label": "Notes",
+              "icon": "lucide:sticky-note",
+              "op": "count",
+              "collection": "memory_notes",
+              "color": "#db2777"
+            }
+          ]
+        }
+      }
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f4796c7004078c92f93"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Filters",
+    "icon": "lucide:filter",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030003"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060015"
+    },
+    "prefabConfig": {
+      "collection": "memory_projects"
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f4796c7004078c92f95"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Projects by status",
+    "icon": "lucide:chart-pie",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030003"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060008"
+    },
+    "prefabConfig": {
+      "collection": "memory_projects",
+      "query": {},
+      "ui": {
+        "chart": {
+          "viewId": {
+            "$oid": "6a249f0396c7004078c90abc"
+          }
+        },
+        "filterBar": {
+          "showActiveFiltersTop": false
+        }
+      }
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f4796c7004078c92f97"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Decisions by status",
+    "icon": "lucide:chart-pie",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030005"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060008"
+    },
+    "prefabConfig": {
+      "collection": "memory_decisions",
+      "query": {},
+      "ui": {
+        "chart": {
+          "viewId": {
+            "$oid": "6a249f0396c7004078c90ae0"
+          }
+        },
+        "filterBar": {
+          "showActiveFiltersTop": false
+        }
+      }
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f4796c7004078c92f99"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Notes per project",
+    "icon": "lucide:bar-chart-3",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030010"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060008"
+    },
+    "prefabConfig": {
+      "collection": "memory_notes",
+      "query": {},
+      "ui": {
+        "chart": {
+          "viewId": {
+            "$oid": "6a249f0696c7004078c90f52"
+          }
+        },
+        "filterBar": {
+          "showActiveFiltersTop": false
+        }
+      }
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f4796c7004078c92f9b"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Decisions — project × status",
+    "icon": "lucide:table-2",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030005"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060007"
+    },
+    "prefabConfig": {
+      "collection": "memory_decisions",
+      "query": {},
+      "ui": {
+        "showGrandTotals": true,
+        "filterBar": {
+          "showActiveFiltersTop": false
+        }
+      },
+      "aggregation": {
+        "rows": [
+          "projectIds"
+        ],
+        "columns": [
+          "status"
+        ],
+        "values": [
+          {
+            "op": "count",
+            "field": "_id",
+            "as": "count"
+          }
+        ]
+      }
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f4796c7004078c92f9d"
+    },
+    "dashboardId": {
+      "$oid": "900000000000000000010001"
+    },
+    "title": "Action items — owner × status",
+    "icon": "lucide:table-2",
+    "groupIds": [
+      {
+        "$oid": "7000000000000000001d0001"
+      },
+      {
+        "$oid": "7000000000000000001d0002"
+      }
+    ],
+    "modelId": {
+      "$oid": "900000000000000000030007"
+    },
+    "prefabId": {
+      "$oid": "700000000000000000060007"
+    },
+    "prefabConfig": {
+      "collection": "memory_action_items",
+      "query": {},
+      "ui": {
+        "showGrandTotals": true,
+        "filterBar": {
+          "showActiveFiltersTop": false
+        }
+      },
+      "aggregation": {
+        "rows": [
+          "ownerId"
+        ],
+        "columns": [
+          "status"
+        ],
+        "values": [
+          {
+            "op": "count",
+            "field": "_id",
+            "as": "count"
+          }
+        ]
+      }
+    },
+    "systemManaged": true
+  },
+  {
+    "_id": {
       "$oid": "900000000000000000020001"
     },
     "dashboardId": {
@@ -20,9 +356,18 @@
       "$oid": "900000000000000000030001"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_people",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249ee196c7004078c8fcac"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -46,9 +391,18 @@
       "$oid": "900000000000000000030003"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_projects",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249ee396c7004078c8fcc1"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -72,9 +426,18 @@
       "$oid": "900000000000000000030004"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_meetings",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249ee696c7004078c8fcec"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -98,9 +461,18 @@
       "$oid": "900000000000000000030008"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_wins",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249ee896c7004078c9009f"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -124,9 +496,18 @@
       "$oid": "900000000000000000030005"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_decisions",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249ee396c7004078c8fccb"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -150,9 +531,18 @@
       "$oid": "900000000000000000030007"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_action_items",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249eec96c7004078c9017d"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -176,9 +566,18 @@
       "$oid": "900000000000000000030010"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
+    "prefabConfig": {
+      "collection": "memory_notes",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249eee96c7004078c90183"
+          }
+        }
+      }
+    },
     "systemManaged": true
   },
   {
@@ -202,217 +601,18 @@
       "$oid": "90000000000000000003000c"
     },
     "prefabId": {
-      "$oid": "700000000000000000060001"
+      "$oid": "70000000000000000006000b"
     },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "900000000000000000020009"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Incidents",
-    "icon": "lucide:siren",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
+    "prefabConfig": {
+      "collection": "memory_goals",
+      "ui": {
+        "tree": {
+          "viewId": {
+            "$oid": "6a249eea96c7004078c9015b"
+          }
+        }
       }
-    ],
-    "modelId": {
-      "$oid": "900000000000000000030006"
     },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "90000000000000000002000a"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Evidence",
-    "icon": "lucide:file-search",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "90000000000000000003000a"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "90000000000000000002000b"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Competencies",
-    "icon": "lucide:target",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "900000000000000000030009"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "90000000000000000002000c"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Reviews",
-    "icon": "lucide:clipboard-check",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "90000000000000000003000b"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "90000000000000000002000d"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Topics",
-    "icon": "lucide:book",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "90000000000000000003000d"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "90000000000000000002000e"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Patterns",
-    "icon": "lucide:repeat",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "90000000000000000003000e"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "90000000000000000002000f"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Gotchas",
-    "icon": "lucide:alert-triangle",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "90000000000000000003000f"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
-    "systemManaged": true
-  },
-  {
-    "_id": {
-      "$oid": "900000000000000000020010"
-    },
-    "dashboardId": {
-      "$oid": "900000000000000000010001"
-    },
-    "title": "Teams",
-    "icon": "lucide:users",
-    "groupIds": [
-      {
-        "$oid": "7000000000000000001d0001"
-      },
-      {
-        "$oid": "7000000000000000001d0002"
-      }
-    ],
-    "modelId": {
-      "$oid": "900000000000000000030002"
-    },
-    "prefabId": {
-      "$oid": "700000000000000000060001"
-    },
-    "prefabConfig": {},
     "systemManaged": true
   }
 ]

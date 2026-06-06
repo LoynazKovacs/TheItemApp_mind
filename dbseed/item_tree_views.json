@@ -1,0 +1,262 @@
+[
+  {
+    "_id": {
+      "$oid": "6a249ee196c7004078c8fcac"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030001"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "People",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "circle",
+    "showTitle": true,
+    "titleField": "name",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "role",
+    "subtitleLines": 1,
+    "showRightBottom": true,
+    "rightBottomField": "teamId",
+    "rightBottomKind": "text",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249ee396c7004078c8fcc1"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030003"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Projects",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "square",
+    "showTitle": true,
+    "titleField": "name",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "description",
+    "subtitleLines": 2,
+    "showRightTop": true,
+    "rightTopField": "leadPersonId",
+    "showRightBottom": true,
+    "rightBottomField": "status",
+    "rightBottomKind": "badge",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249ee396c7004078c8fccb"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030005"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Decisions",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "square",
+    "showTitle": true,
+    "titleField": "title",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "context",
+    "subtitleLines": 2,
+    "showRightTop": true,
+    "rightTopField": "decidedAt",
+    "showRightMiddle": true,
+    "rightMiddleField": "projectIds",
+    "showRightBottom": true,
+    "rightBottomField": "status",
+    "rightBottomKind": "badge",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249ee696c7004078c8fcec"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030004"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Meetings",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "square",
+    "showTitle": true,
+    "titleField": "title",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "type",
+    "subtitleLines": 1,
+    "showRightTop": true,
+    "rightTopField": "occurredAt",
+    "showRightMiddle": true,
+    "rightMiddleField": "peopleIds",
+    "showRightBottom": true,
+    "rightBottomField": "projectIds",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249ee896c7004078c9009f"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030008"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Wins",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "square",
+    "showTitle": true,
+    "titleField": "title",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "impact",
+    "subtitleLines": 2,
+    "showRightTop": true,
+    "rightTopField": "occurredAt",
+    "showRightMiddle": true,
+    "rightMiddleField": "projectIds",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249eea96c7004078c9015b"
+    },
+    "modelId": {
+      "$oid": "90000000000000000003000c"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Goals",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "square",
+    "showTitle": true,
+    "titleField": "title",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "description",
+    "subtitleLines": 2,
+    "showRightTop": true,
+    "rightTopField": "endedAt",
+    "showRightMiddle": true,
+    "rightMiddleField": "horizon",
+    "rightMiddleKind": "badge",
+    "showRightBottom": true,
+    "rightBottomField": "status",
+    "rightBottomKind": "badge",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249eec96c7004078c9017d"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030007"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Action Items",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "ownerId",
+    "avatarShape": "circle",
+    "showTitle": true,
+    "titleField": "title",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "notes",
+    "subtitleLines": 1,
+    "showRightTop": true,
+    "rightTopField": "dueAt",
+    "showRightMiddle": true,
+    "rightMiddleField": "projectId",
+    "showRightBottom": true,
+    "rightBottomField": "status",
+    "rightBottomKind": "badge",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249eee96c7004078c90183"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030010"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Notes",
+    "groupBy": [],
+    "rowDensity": "comfortable",
+    "showAvatar": true,
+    "avatarField": "",
+    "avatarShape": "square",
+    "showTitle": true,
+    "titleField": "title",
+    "titleWeight": "bold",
+    "showSubtitle": true,
+    "subtitleField": "body",
+    "subtitleLines": 2,
+    "showRightMiddle": true,
+    "rightMiddleField": "projectIds",
+    "showRightBottom": true,
+    "rightBottomField": "peopleIds",
+    "sortFields": [],
+    "isDefault": true,
+    "order": 10,
+    "systemManaged": true
+  }
+]

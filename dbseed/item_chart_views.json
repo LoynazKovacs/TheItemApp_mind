@@ -1,0 +1,217 @@
+[
+  {
+    "_id": {
+      "$oid": "6a249f0396c7004078c90abc"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030003"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Projects by status",
+    "data": {
+      "kind": "aggregate",
+      "aggregation": {
+        "rows": [
+          "status"
+        ],
+        "columns": [],
+        "values": [
+          {
+            "op": "count",
+            "as": "count"
+          }
+        ]
+      }
+    },
+    "map": {
+      "datasetFields": []
+    },
+    "builder": {
+      "version": 1,
+      "data": {
+        "kind": "aggregate",
+        "query": [],
+        "sort": "",
+        "limit": 200,
+        "aggregation": {
+          "rows": [
+            "status"
+          ],
+          "columns": [],
+          "values": [
+            {
+              "op": "count",
+              "as": "count"
+            }
+          ]
+        }
+      },
+      "mapping": {
+        "datasetFields": [],
+        "dropNulls": true
+      },
+      "chart": {
+        "type": "pie",
+        "showLegend": true,
+        "showTooltip": true,
+        "stack": false,
+        "smooth": false,
+        "rotateXLabels": false,
+        "enableZoom": false,
+        "xKey": "",
+        "yKeys": []
+      }
+    },
+    "isDefault": false,
+    "pinned": false,
+    "order": 20,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f0396c7004078c90ae0"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030005"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Decisions by status",
+    "data": {
+      "kind": "aggregate",
+      "aggregation": {
+        "rows": [
+          "status"
+        ],
+        "columns": [],
+        "values": [
+          {
+            "op": "count",
+            "as": "count"
+          }
+        ]
+      }
+    },
+    "map": {
+      "datasetFields": []
+    },
+    "builder": {
+      "version": 1,
+      "data": {
+        "kind": "aggregate",
+        "query": [],
+        "sort": "",
+        "limit": 200,
+        "aggregation": {
+          "rows": [
+            "status"
+          ],
+          "columns": [],
+          "values": [
+            {
+              "op": "count",
+              "as": "count"
+            }
+          ]
+        }
+      },
+      "mapping": {
+        "datasetFields": [],
+        "dropNulls": true
+      },
+      "chart": {
+        "type": "pie",
+        "showLegend": true,
+        "showTooltip": true,
+        "stack": false,
+        "smooth": false,
+        "rotateXLabels": false,
+        "enableZoom": false,
+        "xKey": "",
+        "yKeys": []
+      }
+    },
+    "isDefault": false,
+    "pinned": false,
+    "order": 20,
+    "systemManaged": true
+  },
+  {
+    "_id": {
+      "$oid": "6a249f0696c7004078c90f52"
+    },
+    "modelId": {
+      "$oid": "900000000000000000030010"
+    },
+    "appId": {
+      "$oid": "900000000000000000000001"
+    },
+    "name": "Notes per project",
+    "data": {
+      "kind": "aggregate",
+      "aggregation": {
+        "rows": [
+          "projectIds"
+        ],
+        "columns": [],
+        "values": [
+          {
+            "op": "count",
+            "as": "count"
+          }
+        ]
+      }
+    },
+    "map": {
+      "datasetFields": []
+    },
+    "builder": {
+      "version": 1,
+      "data": {
+        "kind": "aggregate",
+        "query": [],
+        "sort": "",
+        "limit": 200,
+        "aggregation": {
+          "rows": [
+            "projectIds"
+          ],
+          "columns": [],
+          "values": [
+            {
+              "op": "count",
+              "as": "count"
+            }
+          ]
+        }
+      },
+      "mapping": {
+        "datasetFields": [],
+        "dropNulls": true
+      },
+      "chart": {
+        "type": "bar",
+        "showLegend": false,
+        "showTooltip": true,
+        "stack": false,
+        "smooth": false,
+        "rotateXLabels": true,
+        "enableZoom": false,
+        "xKey": "",
+        "yKeys": []
+      },
+      "formatting": {},
+      "formatters": {},
+      "advanced": {
+        "optionOverrides": {}
+      }
+    },
+    "isDefault": false,
+    "pinned": false,
+    "order": 20,
+    "systemManaged": true
+  }
+]
