@@ -97,6 +97,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -133,43 +142,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "transaction"
+    "kind": "transaction",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -232,6 +253,15 @@
           "x-ui": {
             "format": "markdown"
           }
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -268,43 +298,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 3,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -437,6 +479,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -473,43 +524,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "transaction"
+    "kind": "transaction",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -622,6 +685,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -658,43 +730,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 2,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -815,6 +899,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -851,43 +944,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -983,6 +1088,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -1019,43 +1133,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -1197,6 +1323,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -1233,43 +1368,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "transaction"
+    "kind": "transaction",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -1375,6 +1522,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -1411,43 +1567,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "transaction"
+    "kind": "transaction",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -1544,6 +1712,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -1580,43 +1757,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -1712,6 +1901,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -1748,43 +1946,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -1883,6 +2093,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -1919,43 +2138,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 2,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -2068,6 +2299,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -2104,43 +2344,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 2,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -2263,6 +2515,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -2299,43 +2560,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "transaction"
+    "kind": "transaction",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -2392,6 +2665,15 @@
           "title": "Parent team",
           "description": "Containing team (for sub-team hierarchy).",
           "x-ref": "memory_teams"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -2428,43 +2710,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 3,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -2561,6 +2855,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -2597,43 +2900,55 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "entity"
+    "kind": "entity",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   },
   {
     "_id": {
@@ -2749,6 +3064,15 @@
           "title": "Attachment",
           "description": "Optional polyref to any record in any collection. Resolves via attachmentModelKey.",
           "x-refPath": "attachmentModelKey"
+        },
+        "userId": {
+          "type": "string",
+          "title": "Owner",
+          "description": "Platform user who owns this memory record. Auto-stamped on creation; enforced by row-level security.",
+          "x-ref": "users",
+          "x-ui": {
+            "readonly": true
+          }
         }
       }
     },
@@ -2785,42 +3109,54 @@
       "read": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "7000000000000000001d0002"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040001"
+          },
+          {
+            "$oid": "900000000000000000040002"
+          },
+          {
+            "$oid": "900000000000000000040003"
           }
         ]
       },
       "create": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "edit": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           },
           {
-            "$oid": "7000000000000000001d0002"
+            "$oid": "900000000000000000040002"
           }
         ]
       },
       "delete": {
         "groupIds": [
           {
-            "$oid": "7000000000000000001d0001"
+            "$oid": "900000000000000000040001"
           }
         ]
       }
     },
     "tier": 1,
-    "kind": "transaction"
+    "kind": "transaction",
+    "x-rls": {
+      "field": "userId",
+      "bypassGroups": [
+        "mind_admin"
+      ]
+    }
   }
 ]
