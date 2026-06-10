@@ -6,19 +6,48 @@
   "requiresCore": true,
   "collections": [
     {
+      "collection": "groups",
+      "file": "groups.json",
+      "matchBy": "keyLower",
+      "installMode": "shared",
+      "exportFields": [
+        "key",
+        "name",
+        "description",
+        "permissions"
+      ]
+    },
+    {
       "collection": "apps",
       "file": "apps.json",
       "matchBy": "key",
       "installMode": "shared",
-      "exportFields": ["key", "name", "description", "icon", "enabled", "groupIds", "ai"],
-      "filter": { "key": "mind" }
+      "exportFields": [
+        "key",
+        "name",
+        "description",
+        "icon",
+        "enabled",
+        "groupIds",
+        "ai"
+      ],
+      "filter": {
+        "key": "mind"
+      }
     },
     {
       "collection": "users",
       "file": "users.json",
       "matchBy": "_id",
       "installMode": "shared",
-      "exportFields": ["username", "usernameLower", "isFunctional", "isSystem", "appId", "groupIds"]
+      "exportFields": [
+        "username",
+        "usernameLower",
+        "isFunctional",
+        "isSystem",
+        "appId",
+        "groupIds"
+      ]
     },
     {
       "collection": "items",
@@ -40,23 +69,47 @@
         "api",
         "auth",
         "tier",
-        "kind"
+        "kind",
+        "behavior",
+        "x-rls"
       ],
-      "filter": { "appId": "<thisAppId>" }
+      "filter": {
+        "appId": "<thisAppId>"
+      }
     },
     {
       "collection": "dashboards",
       "file": "dashboards.json",
       "matchBy": "_id",
       "installMode": "installConfig",
-      "exportFields": ["appId", "name", "icon", "isHome", "interactive", "groupIds", "statusId", "gridsterConfigId", "tiles", "systemManaged"]
+      "exportFields": [
+        "appId",
+        "name",
+        "icon",
+        "isHome",
+        "interactive",
+        "groupIds",
+        "statusId",
+        "gridsterConfigId",
+        "tiles",
+        "systemManaged"
+      ]
     },
     {
       "collection": "windows",
       "file": "windows.json",
       "matchBy": "_id",
       "installMode": "installConfig",
-      "exportFields": ["dashboardId", "title", "icon", "groupIds", "modelId", "prefabId", "prefabConfig", "systemManaged"]
+      "exportFields": [
+        "dashboardId",
+        "title",
+        "icon",
+        "groupIds",
+        "modelId",
+        "prefabId",
+        "prefabConfig",
+        "systemManaged"
+      ]
     },
     {
       "collection": "item_tree_views",
@@ -98,23 +151,53 @@
         "order",
         "systemManaged"
       ],
-      "filter": { "appId": "<thisAppId>" }
+      "filter": {
+        "appId": "<thisAppId>"
+      }
     },
     {
       "collection": "item_chart_views",
       "file": "item_chart_views.json",
       "matchBy": "_id",
       "installMode": "installConfig",
-      "exportFields": ["modelId", "appId", "name", "data", "map", "builder", "isDefault", "pinned", "order", "systemManaged"],
-      "filter": { "appId": "<thisAppId>" }
+      "exportFields": [
+        "modelId",
+        "appId",
+        "name",
+        "data",
+        "map",
+        "builder",
+        "isDefault",
+        "pinned",
+        "order",
+        "systemManaged"
+      ],
+      "filter": {
+        "appId": "<thisAppId>"
+      }
     },
     {
       "collection": "scenarios",
       "file": "scenarios.json",
       "matchBy": "key",
       "installMode": "shared",
-      "exportFields": ["key", "title", "subtitle", "description", "appKey", "mode", "trigger", "audience", "isPublished", "version", "tags", "steps"],
-      "filter": { "appId": "<thisAppId>" }
+      "exportFields": [
+        "key",
+        "title",
+        "subtitle",
+        "description",
+        "appKey",
+        "mode",
+        "trigger",
+        "audience",
+        "isPublished",
+        "version",
+        "tags",
+        "steps"
+      ],
+      "filter": {
+        "appId": "<thisAppId>"
+      }
     }
   ]
 }
