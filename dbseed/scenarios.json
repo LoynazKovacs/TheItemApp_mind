@@ -19,35 +19,40 @@
     ],
     "steps": [
       {
+        "id": "welcome",
+        "placement": "center",
+        "title": "Welcome to Mind",
+        "body": "**Mind** is your second brain — persistent memory that survives across AI sessions. It holds the people, projects, decisions, wins and lessons of your work, and every record links to the others, so the **graph builds itself**.\n\nLet's open it and walk through each kind of memory. Use **Next** to step along, or **Esc** to leave anytime.",
         "buttons": [],
         "beforeShow": {},
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "welcome",
-        "placement": "center",
-        "title": "Welcome to Mind",
-        "body": "**Mind** is your second brain — persistent memory that survives across AI sessions. It holds the people, projects, decisions, wins and lessons of your work, and every record links to the others, so the **graph builds itself**.\n\nLet's open it and walk through each kind of memory. Use **Next** to step along, or **Esc** to leave anytime."
+        "assertions": []
       },
       {
-        "buttons": [],
-        "beforeShow": {},
-        "advanceOn": {
-          "event": "click"
-        },
-        "modal": false,
-        "assertions": [],
         "id": "open-menu",
         "anchorKey": "sidebar-toolbar-button-left-menu",
         "placement": "bottom",
         "title": "Open your menu",
         "body": "Navigation always starts from the **Menu** button on the left. Click it to open your menu — I'll continue the moment it opens.",
+        "buttons": [],
+        "beforeShow": {},
         "showIf": {
           "selectorExists": "[data-testid=\"sidebar-toolbar-button-left-menu\"]",
           "selectorMissing": "[data-testid=\"sidebar-left\"].open"
-        }
+        },
+        "advanceOn": {
+          "event": "click"
+        },
+        "modal": false,
+        "assertions": []
       },
       {
+        "id": "apps-section",
+        "anchorKey": "core.sidebar.apps",
+        "placement": "right",
+        "title": "The Apps section",
+        "body": "Your menu has two halves — **Desktops**, your personal workspaces, and **Apps**, every installed application. This is the **Apps** section, and **Mind** lives here.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"core.sidebar.apps\"]",
@@ -55,14 +60,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "apps-section",
-        "anchorKey": "core.sidebar.apps",
-        "placement": "right",
-        "title": "The Apps section",
-        "body": "Your menu has two halves — **Desktops**, your personal workspaces, and **Apps**, every installed application. This is the **Apps** section, and **Mind** lives here."
+        "assertions": []
       },
       {
+        "id": "open-app",
+        "anchorKey": "core.sidebar.app.mind",
+        "placement": "right",
+        "title": "Open the Mind app",
+        "body": "Click **Mind** to open it. Opening an app drops you straight onto its **home dashboard** — Mind Home. I'll continue once it loads.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"core.sidebar.app.mind\"]",
@@ -73,14 +78,14 @@
           "matchDescendant": ".labelBtn"
         },
         "modal": false,
-        "assertions": [],
-        "id": "open-app",
-        "anchorKey": "core.sidebar.app.mind",
-        "placement": "right",
-        "title": "Open the Mind app",
-        "body": "Click **Mind** to open it. Opening an app drops you straight onto its **home dashboard** — Mind Home. I'll continue once it loads."
+        "assertions": []
       },
       {
+        "id": "arrived",
+        "anchorKey": "core.desktop.canvas",
+        "placement": "center",
+        "title": "Mind Home",
+        "body": "This is **Mind Home** — now the background of your desktop. Each tile is a live window onto one kind of memory. There are sixteen; let's look at them one at a time.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-people\"]",
@@ -88,14 +93,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "arrived",
-        "anchorKey": "core.desktop.canvas",
-        "placement": "center",
-        "title": "Mind Home",
-        "body": "This is **Mind Home** — now the background of your desktop. Each tile is a live window onto one kind of memory. There are sixteen; let's look at them one at a time."
+        "assertions": []
       },
       {
+        "id": "window-people",
+        "anchorKey": "window-people",
+        "placement": "bottom",
+        "title": "People",
+        "body": "**People** lists the `memory_people` collection — everyone you work with: colleagues, stakeholders, contacts. Most other records point back here, so a decision or a meeting also remembers who was part of it.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-people\"]",
@@ -103,14 +108,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-people",
-        "anchorKey": "window-people",
-        "placement": "bottom",
-        "title": "People",
-        "body": "**People** lists the `memory_people` collection — everyone you work with: colleagues, stakeholders, contacts. Most other records point back here, so a decision or a meeting also remembers who was part of it."
+        "assertions": []
       },
       {
+        "id": "window-projects",
+        "anchorKey": "window-projects",
+        "placement": "bottom",
+        "title": "Projects",
+        "body": "**Projects** lists the `memory_projects` collection — the initiatives you're involved in. They're the spine of the graph: meetings, decisions, action items, wins and incidents all link to the project they belong to.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-projects\"]",
@@ -118,14 +123,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-projects",
-        "anchorKey": "window-projects",
-        "placement": "bottom",
-        "title": "Projects",
-        "body": "**Projects** lists the `memory_projects` collection — the initiatives you're involved in. They're the spine of the graph: meetings, decisions, action items, wins and incidents all link to the project they belong to."
+        "assertions": []
       },
       {
+        "id": "window-meetings",
+        "anchorKey": "window-meetings",
+        "placement": "bottom",
+        "title": "Meetings",
+        "body": "**Meetings** lists the `memory_meetings` collection — who met, when, and what came out of it. Link the attendees and the project and a meeting becomes a searchable point in your timeline, not a lost calendar entry.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-meetings\"]",
@@ -133,14 +138,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-meetings",
-        "anchorKey": "window-meetings",
-        "placement": "bottom",
-        "title": "Meetings",
-        "body": "**Meetings** lists the `memory_meetings` collection — who met, when, and what came out of it. Link the attendees and the project and a meeting becomes a searchable point in your timeline, not a lost calendar entry."
+        "assertions": []
       },
       {
+        "id": "window-wins",
+        "anchorKey": "window-wins",
+        "placement": "bottom",
+        "title": "Wins",
+        "body": "**Wins** lists the `memory_wins` collection — the things that went well: shipped features, solved problems, good calls. Tie each to the competencies it shows and you've got ready-made evidence for your next review.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-wins\"]",
@@ -148,14 +153,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-wins",
-        "anchorKey": "window-wins",
-        "placement": "bottom",
-        "title": "Wins",
-        "body": "**Wins** lists the `memory_wins` collection — the things that went well: shipped features, solved problems, good calls. Tie each to the competencies it shows and you've got ready-made evidence for your next review."
+        "assertions": []
       },
       {
+        "id": "window-decisions",
+        "anchorKey": "window-decisions",
+        "placement": "bottom",
+        "title": "Decisions",
+        "body": "**Decisions** lists the `memory_decisions` collection — the choices you made and, crucially, why. Months later, when someone asks why we did it this way, the reasoning is right here instead of lost to memory.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-decisions\"]",
@@ -163,14 +168,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-decisions",
-        "anchorKey": "window-decisions",
-        "placement": "bottom",
-        "title": "Decisions",
-        "body": "**Decisions** lists the `memory_decisions` collection — the choices you made and, crucially, why. Months later, when someone asks why we did it this way, the reasoning is right here instead of lost to memory."
+        "assertions": []
       },
       {
+        "id": "window-action-items",
+        "anchorKey": "window-action-items",
+        "placement": "bottom",
+        "title": "Action Items",
+        "body": "**Action Items** lists the `memory_action_items` collection — the follow-ups that fall out of meetings, decisions and incidents. Each links back to where it came from, so nothing gets orphaned.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-action-items\"]",
@@ -178,14 +183,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-action-items",
-        "anchorKey": "window-action-items",
-        "placement": "bottom",
-        "title": "Action Items",
-        "body": "**Action Items** lists the `memory_action_items` collection — the follow-ups that fall out of meetings, decisions and incidents. Each links back to where it came from, so nothing gets orphaned."
+        "assertions": []
       },
       {
+        "id": "window-notes",
+        "anchorKey": "window-notes",
+        "placement": "bottom",
+        "title": "Notes",
+        "body": "**Notes** lists the `memory_notes` collection — the free-form catch-all for anything that doesn't fit a tidier box yet. The markdown body is the content; add a person or project and even a loose note joins the graph.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-notes\"]",
@@ -193,14 +198,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-notes",
-        "anchorKey": "window-notes",
-        "placement": "bottom",
-        "title": "Notes",
-        "body": "**Notes** lists the `memory_notes` collection — the free-form catch-all for anything that doesn't fit a tidier box yet. The markdown body is the content; add a person or project and even a loose note joins the graph."
+        "assertions": []
       },
       {
+        "id": "window-goals",
+        "anchorKey": "window-goals",
+        "placement": "bottom",
+        "title": "Goals",
+        "body": "**Goals** lists the `memory_goals` collection — what you're working toward: quarterly objectives, growth targets, personal aims. The wins, projects and competencies pointing at a goal tell its progress.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-goals\"]",
@@ -208,14 +213,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-goals",
-        "anchorKey": "window-goals",
-        "placement": "bottom",
-        "title": "Goals",
-        "body": "**Goals** lists the `memory_goals` collection — what you're working toward: quarterly objectives, growth targets, personal aims. The wins, projects and competencies pointing at a goal tell its progress."
+        "assertions": []
       },
       {
+        "id": "window-incidents",
+        "anchorKey": "window-incidents",
+        "placement": "top",
+        "title": "Incidents",
+        "body": "**Incidents** lists the `memory_incidents` collection — when things went wrong: outages, breakages, mistakes. Capturing the what and the fix turns a bad day into a durable lesson, often spawning action items and gotchas.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-incidents\"]",
@@ -223,14 +228,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-incidents",
-        "anchorKey": "window-incidents",
-        "placement": "top",
-        "title": "Incidents",
-        "body": "**Incidents** lists the `memory_incidents` collection — when things went wrong: outages, breakages, mistakes. Capturing the what and the fix turns a bad day into a durable lesson, often spawning action items and gotchas."
+        "assertions": []
       },
       {
+        "id": "window-evidence",
+        "anchorKey": "window-evidence",
+        "placement": "top",
+        "title": "Evidence",
+        "body": "**Evidence** lists the `memory_evidence` collection — the proof behind your story: links, artifacts, metrics, quotes. It backs up competencies and reviews so claims about your impact aren't just assertions.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-evidence\"]",
@@ -238,14 +243,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-evidence",
-        "anchorKey": "window-evidence",
-        "placement": "top",
-        "title": "Evidence",
-        "body": "**Evidence** lists the `memory_evidence` collection — the proof behind your story: links, artifacts, metrics, quotes. It backs up competencies and reviews so claims about your impact aren't just assertions."
+        "assertions": []
       },
       {
+        "id": "window-competencies",
+        "anchorKey": "window-competencies",
+        "placement": "top",
+        "title": "Competencies",
+        "body": "**Competencies** lists the `memory_competencies` collection — the skills you're building and demonstrating. Wins and evidence link in as proof, and reviews assess them: this is where your growth is tracked over time.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-competencies\"]",
@@ -253,14 +258,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-competencies",
-        "anchorKey": "window-competencies",
-        "placement": "top",
-        "title": "Competencies",
-        "body": "**Competencies** lists the `memory_competencies` collection — the skills you're building and demonstrating. Wins and evidence link in as proof, and reviews assess them: this is where your growth is tracked over time."
+        "assertions": []
       },
       {
+        "id": "window-reviews",
+        "anchorKey": "window-reviews",
+        "placement": "top",
+        "title": "Reviews",
+        "body": "**Reviews** lists the `memory_reviews` collection — your performance reviews and retrospectives. They cite the competencies assessed and the evidence behind them, so a review writes itself from the graph you've built.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-reviews\"]",
@@ -268,14 +273,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-reviews",
-        "anchorKey": "window-reviews",
-        "placement": "top",
-        "title": "Reviews",
-        "body": "**Reviews** lists the `memory_reviews` collection — your performance reviews and retrospectives. They cite the competencies assessed and the evidence behind them, so a review writes itself from the graph you've built."
+        "assertions": []
       },
       {
+        "id": "window-topics",
+        "anchorKey": "window-topics",
+        "placement": "top",
+        "title": "Topics",
+        "body": "**Topics** lists the `memory_topics` collection — the subjects and areas of knowledge you care about. Use them to group notes, patterns and gotchas around a theme so related learnings cluster.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-topics\"]",
@@ -283,14 +288,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-topics",
-        "anchorKey": "window-topics",
-        "placement": "top",
-        "title": "Topics",
-        "body": "**Topics** lists the `memory_topics` collection — the subjects and areas of knowledge you care about. Use them to group notes, patterns and gotchas around a theme so related learnings cluster."
+        "assertions": []
       },
       {
+        "id": "window-patterns",
+        "anchorKey": "window-patterns",
+        "placement": "top",
+        "title": "Patterns",
+        "body": "**Patterns** lists the `memory_patterns` collection — the recurring shapes you've noticed: approaches that keep working, situations that keep repeating. Name a pattern once and reuse the insight everywhere it applies.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-patterns\"]",
@@ -298,14 +303,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-patterns",
-        "anchorKey": "window-patterns",
-        "placement": "top",
-        "title": "Patterns",
-        "body": "**Patterns** lists the `memory_patterns` collection — the recurring shapes you've noticed: approaches that keep working, situations that keep repeating. Name a pattern once and reuse the insight everywhere it applies."
+        "assertions": []
       },
       {
+        "id": "window-gotchas",
+        "anchorKey": "window-gotchas",
+        "placement": "top",
+        "title": "Gotchas",
+        "body": "**Gotchas** lists the `memory_gotchas` collection — the traps learned the hard way: surprising footguns and edge cases. Write one down and you, or your AI, never get caught by it twice.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-gotchas\"]",
@@ -313,14 +318,14 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-gotchas",
-        "anchorKey": "window-gotchas",
-        "placement": "top",
-        "title": "Gotchas",
-        "body": "**Gotchas** lists the `memory_gotchas` collection — the traps learned the hard way: surprising footguns and edge cases. Write one down and you, or your AI, never get caught by it twice."
+        "assertions": []
       },
       {
+        "id": "window-teams",
+        "anchorKey": "window-teams",
+        "placement": "top",
+        "title": "Teams",
+        "body": "**Teams** lists the `memory_teams` collection — the groups people belong to. Link a person to their team and a project to the teams behind it, and you can see the human structure around any piece of work.",
         "buttons": [],
         "beforeShow": {
           "waitForSelector": "[data-testid=\"window-teams\"]",
@@ -328,23 +333,18 @@
         },
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "window-teams",
-        "anchorKey": "window-teams",
-        "placement": "top",
-        "title": "Teams",
-        "body": "**Teams** lists the `memory_teams` collection — the groups people belong to. Link a person to their team and a project to the teams behind it, and you can see the human structure around any piece of work."
+        "assertions": []
       },
       {
+        "id": "outro",
+        "placement": "center",
+        "title": "That's your second brain!",
+        "body": "You've met all sixteen kinds of memory — **people**, **teams** and **projects**; the work itself in **meetings**, **decisions**, **action items**, **incidents** and **wins**; your growth in **competencies**, **evidence**, **reviews** and **goals**; and your knowledge in **notes**, **topics**, **patterns** and **gotchas**.\n\nThe magic is the **links between them** — fill in the refs and the graph builds itself. Just talk to your AI as you work, and Mind remembers. Check the **Help Center** anytime.",
         "buttons": [],
         "beforeShow": {},
         "advanceOn": {},
         "modal": false,
-        "assertions": [],
-        "id": "outro",
-        "placement": "center",
-        "title": "That's your second brain!",
-        "body": "You've met all sixteen kinds of memory — **people**, **teams** and **projects**; the work itself in **meetings**, **decisions**, **action items**, **incidents** and **wins**; your growth in **competencies**, **evidence**, **reviews** and **goals**; and your knowledge in **notes**, **topics**, **patterns** and **gotchas**.\n\nThe magic is the **links between them** — fill in the refs and the graph builds itself. Just talk to your AI as you work, and Mind remembers. Check the **Help Center** anytime."
+        "assertions": []
       }
     ]
   }

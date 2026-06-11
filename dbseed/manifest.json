@@ -14,7 +14,9 @@
         "key",
         "name",
         "description",
-        "permissions"
+        "permissions",
+        "appId",
+        "systemManaged"
       ]
     },
     {
@@ -22,15 +24,6 @@
       "file": "apps.json",
       "matchBy": "key",
       "installMode": "shared",
-      "exportFields": [
-        "key",
-        "name",
-        "description",
-        "icon",
-        "enabled",
-        "groupIds",
-        "ai"
-      ],
       "filter": {
         "key": "mind"
       }

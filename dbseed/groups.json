@@ -4,41 +4,35 @@
       "$oid": "900000000000000000040001"
     },
     "key": "mind_admin",
-    "keyLower": "mind_admin",
     "name": "Mind Admin",
     "description": "Full administrative access to all Mind memory collections: read, create, edit, and delete records. Bypasses per-user row-level security policies so the backend service can manage memories on behalf of any user.",
     "permissions": [],
     "appId": {
       "$oid": "900000000000000000000001"
-    },
-    "systemManaged": true
+    }
   },
   {
     "_id": {
       "$oid": "900000000000000000040002"
     },
     "key": "mind_editor",
-    "keyLower": "mind_editor",
     "name": "Mind Editor",
     "description": "Create and edit memory records (people, projects, wins, notes, decisions, etc.). Cannot delete records or bypass per-user row-level security.",
     "permissions": [],
     "appId": {
       "$oid": "900000000000000000000001"
-    },
-    "systemManaged": true
+    }
   },
   {
     "_id": {
       "$oid": "900000000000000000040003"
     },
     "key": "mind_viewer",
-    "keyLower": "mind_viewer",
     "name": "Mind Viewer",
     "description": "Read-only access to Mind memory collections. Cannot create, modify, or delete any records.",
     "permissions": [],
     "appId": {
       "$oid": "900000000000000000000001"
-    },
-    "systemManaged": true
+    }
   }
 ]
